@@ -5,6 +5,7 @@ import com.forit.action.AdminAssignDetailAction;
 import com.forit.action.AdminAssignRegisterAction;
 import com.forit.action.AdminAssignmentRegFormAction;
 import com.forit.action.AdminAssignListAction;
+import com.forit.action.AdminAssignUpdateFormAction;
 import com.forit.action.ClubIntroAction;
 import com.forit.action.LoginAction;
 import com.forit.action.MainAction;
@@ -64,7 +65,12 @@ public class ActionFactory {
 		}	else if (command.equals("assignList")){
 			
 			action = new AdminAssignListAction();
+			//오늘의 과제 수정
+		}	else if (command.equals("adminAssignModify")){
+			
+			action = new AdminAssignUpdateFormAction();
 		}
+		
 			else if (command.equals("clubIntro")){
 			
 			action = new ClubIntroAction();

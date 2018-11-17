@@ -40,6 +40,7 @@ public class AdminAssignmentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//한글로 보이게 하기.
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}

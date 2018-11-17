@@ -1,90 +1,169 @@
+<!-- 수정하기를 눌렀을 때! -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page session="false"%>
 
 <%@include file="../include/header.jsp"%>
 
-<!-- Main content -->
-<section class="content">
-	<div class="row">
-		<!-- left column -->
-		<div class="col-md-12">
-			<!-- general form elements -->
-			<div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title">MODIFY BOARD</h3>
-				</div>
-				<!-- /.box-header -->
+<div class="main-content">
+   <!-- Section : inner-header -->
+   <section
+      class="inner-header divider parallax layer-overlay overlay-dark-5"
+      data-bg-img="/resources/images/newslist.jpg">
+      <div class="container pt-70 pb-20">
+         <!-- Section Content -->
+         <div class="section-content">
+            <div class="row">
+               <div class="col-md-12">
+                  <h2 class="title text-white">공지사항 등록</h2>
+                  <ol class="breadcrumb text-left text-white">
+                     <li><a href="/">&nbsp;</a></li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
 
-<form role="form" action="modifyPage" method="post">
 
-	<input type='hidden' name='page' value="${cri.page}"> <input
-		type='hidden' name='perPageNum' value="${cri.perPageNum}">
-	<input type='hidden' name='searchType' value="${cri.searchType}">
-	<input type='hidden' name='keyword' value="${cri.keyword}">
+   <!-- main 
+   폼넣기
+중복되는부분빼고
+    -->
 
-					<div class="box-body">
+   <form role="form" method="post" class="form-horizontal"
+      action="/adminAssign?command=adminaAssignRegEnd">
+      <input type="hidden" name="validation">
+      <div class="box-body box-form-custom">
+         <div class="form-group input-short">
+            <div class="container">
+            <!-- /. side Menu  -->
+               <div class="col-md-2 mt-30 hidden-xs hidden-sm">
+                  <div class="sidebar sidebar-left mt-sm-30">
+                     <div class="widget">
+                        <h5 class="widget-title line-bottom">
+                        <a href="introGroup">커뮤니티 등록</a>
+                        </h5>
+                     <div class="categories">
+                        <ul class="list list-border angle-double-right">
+                           <li><a href="/admin/register">공지사항 등록 </a></li>
+                           <li><a href="/imgGallery/list">오늘의 과제 등록</a></li>
+                        </ul>
+                     </div>
+                     </div>
+                  </div>
+               </div>
+            
+               <div class="col-md-9 blog-pull-right">
+                  <div class="row">
+                     <div style="height: 50px;">
+                        <h4 class="line-bottom mt-20 mb-20 text-theme-colored">공지사항
+                           등록</h4>
+                     </div>
 
-						<div class="form-group">
-							<label for="exampleInputEmail1">BNO</label> <input type="text"
-								name='bno' class="form-control" value="${boardVO.bno}"
-								readonly="readonly">
-						</div>
 
-						<div class="form-group">
-							<label for="exampleInputEmail1">Title</label> <input type="text"
-								name='title' class="form-control" value="${boardVO.title}">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">Content</label>
-							<textarea class="form-control" name="content" rows="3">${boardVO.content}</textarea>
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Writer</label> <input
-								type="text" name="writer" class="form-control"
-								value="${boardVO.writer}">
-						</div>
-					</div>
-					<!-- /.box-body -->
-				</form>
-				<div class="box-footer">
-					<button type="submit" class="btn btn-primary">SAVE</button>
-					<button type="submit" class="btn btn-warning">CANCEL</button>
-				</div>
+                     <div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">제목<span
+                           class="must-mark"></span></label>
+                        <div class="col-sm-10">
+                        <!-- input type의 name중요시 -->
+                           <input type="text" name="assignTitle" class="form-control"
+                             value="${AssignmentVO.assTitle}">
+                        </div>
+                     </div>
+
+                     <div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">내용<span
+                           class="must-mark"></span></label>
+                        <div class="col-sm-10">
+                           <input type="text" name="assignContent" class="form-control"
+                             value="${AssignmentVO.assContent}"> <span id="assContent"></span>
+                        </div>
+                     </div>
+                     
+                    <div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
+                           class="must-mark"></span></label>
+                        <div class="col-sm-10">
+                           <input type="text" name="adminId" class="form-control"
+                             value="${AssignmentVO.adminId}" readonly="readonly"> <span id="assContent"></span>
+                        </div>
+                     </div>
+                     
+                     
+
+
+                     <!-- /.box-body -->
+
+                     <div class="box-footer btn-group-center">
+                        <button type="button" class="btn btn-cancel">취소</button>
+                        <button type="submit" class="btn btn-primary" id="submitbutton">등록</button>
+                     </div>
+                  </div>
+               </div>
+            </div>   
+         </div>
+      </div>
+   </form>
+</div>
+
+
+<!-- /.content -->
+
 
 <script>
-$(document).ready(
-	function() {
+   var result = '${msg}';
 
-		var formObj = $("form[role='form']");
-
-		console.log(formObj);
-
-		$(".btn-warning")
-				.on("click",function() {
-					self.location = "/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
-							+ "&searchType=${cri.searchType}&keyword=${cri.keyword}";
-				});
-
-		$(".btn-primary").on("click",
-				function() {
-					formObj.submit();
-				});
-	});
+   if (result == 'SUCCESS') {
+      alert("처리가 완료되었습니다.");
+   }
 </script>
+<!-- 스크립트 메세지 -->
+
+<!-- 페이지이동 스트립트 -->
+
+<script>
+   $(document).ready(
+         function() {
+
+            $('#searchBtn').on(
+                  "click",
+                  function(event) {
+
+                     self.location = "/admin/assignment/modifyPage.jsp"
+                           + '${pageMaker.makeQuery(1)}'
+                           + "&searchType="
+                           + $("#searchType option:selected").val()
+                           + "&keyword=" + $('#keywordInput').val();
+
+                  });
+
+            $('#newBtn').on("click", function(evt) {
+
+               self.location = "/admin/assignment/list.jsp";
+
+            });
+
+         });
+</script>
+<!-- 검색버튼, 등록버튼 스크립트 -->
+
+
+
+<form>
+   <!--  id="jobForm"  -->
+   <input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
+   <input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>
+
+</form>
 
 
 
 
-			</div>
-			<!-- /.box -->
-		</div>
-		<!--/.col (left) -->
 
-	</div>
-	<!-- /.row -->
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
 
 <%@include file="../include/footer.jsp"%>

@@ -33,6 +33,7 @@ public class AdminAssignRegisterAction implements Action{
 	      System.out.println("assignTitle : " + assTitle);
 	      System.out.println("assignContent : " + assContent);
 	      System.out.println("adminId : " + adminId);
+	      
 	      // 객체 세팅
 	      aVo.setAssTitle(assTitle);
 	      aVo.setAssContent(assContent);
