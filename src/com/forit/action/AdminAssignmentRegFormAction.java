@@ -12,8 +12,8 @@ public class AdminAssignmentRegFormAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	
-	String url = "admin/assignment/register.jsp";
+		
+		String url = "admin/assignment/register.jsp";
 		
 /*		AssignmentVO aVo = new AssignmentVO();
     

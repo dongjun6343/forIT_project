@@ -17,7 +17,7 @@
          <div class="section-content">
             <div class="row">
                <div class="col-md-12">
-                  <h2 class="title text-white">공지사항</h2>
+                  <h2 class="title text-white">오늘의 과제</h2>
                   <ol class="breadcrumb text-left text-white">
                      <li><a href="/">&nbsp;</a></li>
                   </ol>
@@ -110,7 +110,7 @@
 
       $(".btn-primary").on("click", function() {
          formObj.attr("method", "get");
-         formObj.attr("action", "/adminAssign");
+         formObj.attr("action", "/adminAssign/");
          formObj.submit();
       });
 

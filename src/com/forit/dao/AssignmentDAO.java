@@ -23,7 +23,7 @@ public class AssignmentDAO extends CommonDAO {
 	//과제 조회
 	public List<AssignmentVO> selectAllAssignments() {
 	    
-			String sql = "SELECT ASSNUM,ASSTITLE,ASSDATE,ASSCONTENT,ASSCOUNT,ADMINID FROM ASSIGNMENT";
+		  String sql = "SELECT ASSNUM,ASSTITLE,ASSDATE,ASSCONTENT,ASSCOUNT,ASSACTIVE,ADMINID FROM ASSIGNMENT";
 			
 	      List<AssignmentVO> list = new ArrayList<AssignmentVO>();
 	      Connection conn = null;
@@ -44,7 +44,8 @@ public class AssignmentDAO extends CommonDAO {
 	            aVo.setAssDate(rs.getTimestamp("assDate"));
 	            aVo.setAssContent(rs.getString("assContent"));
 	            aVo.setAssCount(rs.getInt("assCount"));
-//	            aVo.setASSACTIVE(rs.getString("ASSACTIVE"));
+	            //String 형식을 char형으로 변환
+	            aVo.setAssActive(rs.getString("assActive").charAt(0));
 	            aVo.setAdminId(rs.getString("adminId"));
 	            
 	            
@@ -62,7 +63,7 @@ public class AssignmentDAO extends CommonDAO {
 	//과제 등록
 	public void insertAssignment(AssignmentVO aVo){
 		 String sql = "insert into ASSIGNMENT( " 
-				 	+ "ASSNUM,ASSTITLE,ASSDATE,ASSCONTENT,ASSCOUNT,ADMINID)"
+				 	+ "ASSNUM,ASSTITLE,ASSCONTENT,ASSCOUNT,ASSACTIVE,ADMINID)"
 		            + "values (ASSIGNMENT_SEQ.nextval,?,?,?,?,?)";
 	
 		 Connection conn = null;
@@ -75,10 +76,9 @@ public class AssignmentDAO extends CommonDAO {
 //			 st.setInt(1, aVo.getASSNUM());
 			 
 			 stmt.setString(1, aVo.getAssTitle());
-			 stmt.setTimestamp(2, aVo.getAssDate());
-			 stmt.setString(3, aVo.getAssContent());
-			 stmt.setInt(4, aVo.getAssCount());
-//			 st.setLong(5, aVo.getASSACTIVE());
+			 stmt.setString(2, aVo.getAssContent());
+			 stmt.setInt(3, aVo.getAssCount());
+			 stmt.setLong(4, aVo.getAssActive());
 			 stmt.setString(5, aVo.getAdminId());
 			 
 			 stmt.executeUpdate();
@@ -93,7 +93,7 @@ public class AssignmentDAO extends CommonDAO {
 	}
 	//상세보기 : 글 번호로 찾아온다 : 실패 null;
 	public AssignmentVO selectOneAssignementByNum(String assNum){
-		String sql = "SELECT ASSNUM,ASSTITLE,ASSDATE,ASSCONTENT,ASSCOUNT,ADMINID FROM ASSIGNMENT where ASSNUM = ?";
+		String sql = "SELECT ASSNUM,ASSTITLE,ASSDATE,ASSCONTENT,ASSCOUNT,ASSACTIVE,ADMINID FROM ASSIGNMENT where ASSNUM = ?";
 		
 		AssignmentVO aVo = null;
 		Connection conn = null;
@@ -115,6 +115,7 @@ public class AssignmentDAO extends CommonDAO {
 		         aVo.setAssDate(rs.getTimestamp("assDate"));
 		         aVo.setAssContent(rs.getString("assContent"));
 		         aVo.setAssCount(rs.getInt("assCount"));
+		         aVo.setAssActive(rs.getString("assActive").charAt(0));
 		         aVo.setAdminId(rs.getString("adminId"));
 			}
 			

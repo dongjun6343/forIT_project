@@ -16,7 +16,7 @@ public class AdminAssignListAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/admin/assignment/list.jsp";
+		String url = "/admin/assignment/list.jsp"; //url
 		
 		AssignmentDAO aDao = AssignmentDAO.getInstance();
 		
