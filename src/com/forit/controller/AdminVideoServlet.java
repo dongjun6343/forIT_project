@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.forit.action.Action;
 
 /**
- * Servlet implementation class VideoSurvlet
+ * Servlet implementation class AdminVideoSurvlet
  */
-@WebServlet("/videoServlet")
-public class VideoServlet extends HttpServlet {
+@WebServlet("/AdminVideoServlet")
+public class AdminVideoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public VideoServlet() {
+    public AdminVideoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,21 +27,23 @@ public class VideoServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String command = request.getParameter("command");
-        System.out.println("VideoServlet에서 요청을 받음을 확인 : + command");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String command = request.getParameter("command");
+        System.out.println("AdminVideoServlet에서 요청을 받음을 확인 : + command");
         ActionFactory af  = ActionFactory.getInstance();
         Action action = af.getAction(command);
         
         if(action != null){
            action.execute(request, response);
         }
-     }
+		
+	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}

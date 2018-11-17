@@ -10,7 +10,7 @@ public class VideoVO {
 	private String vTitle;
 	private Timestamp vDate;
 	private String vContent;
-	private String vCode; //데이터 타입확인 
+	private String vSubject; //데이터 타입확인 
 	private String vUrl;
 	private int vCount;
 	private String adminId;
@@ -41,11 +41,11 @@ public class VideoVO {
 	public void setvContent(String vContent) {
 		this.vContent = vContent;
 	}
-	public String getvCode() {
-		return vCode;
+	public String getvSubject() {
+		return vSubject;
 	}
-	public void setvCode(String vCode) {
-		this.vCode = vCode;
+	public void setvSubject(String vSubject) {
+		this.vSubject = vSubject;
 	}
 	public String getvUrl() {
 		return vUrl;
@@ -69,7 +69,7 @@ public class VideoVO {
 	@Override
 	public String toString() {
 		return "VideoVO [vNum=" + vNum + ", vTitle=" + vTitle + ", vDate=" + vDate + ", vContent=" + vContent
-				+ ", vCode=" + vCode + ", vUrl=" + vUrl + ", vCount=" + vCount + ", adminId=" + adminId + "]";
+				+ ", vSubject=" + vSubject + ", vUrl=" + vUrl + ", vCount=" + vCount + ", adminId=" + adminId + "]";
 	}
 	
 	
