@@ -23,7 +23,7 @@ public class AssignmentDAO extends CommonDAO {
 	//과제 조회
 	public List<AssignmentVO> selectAllAssignments() {
 	    
-			String sql = "SELECT ASSNUM,ASSTITLE,ASSDATE,ASSCONTENT,ASSCOUNT,ASSACTIVE,ADMINID FROM ASSIGNMENT";
+		  String sql = "SELECT ASSNUM,ASSTITLE,ASSDATE,ASSCONTENT,ASSCOUNT,ASSACTIVE,ADMINID FROM ASSIGNMENT";
 			
 	      List<AssignmentVO> list = new ArrayList<AssignmentVO>();
 	      Connection conn = null;
