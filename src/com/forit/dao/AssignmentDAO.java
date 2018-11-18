@@ -158,6 +158,7 @@ public class AssignmentDAO extends CommonDAO {
 		}	
 		
 	}
+
 	
 	 public void updateBoard(AssignmentVO aVo){
 	 String sql = "UPDATE ASSIGNMENT SET ASSTITLE=?,ASSDATE=?,ASSCONTENT=? WHERE ASSNUM=?";
@@ -184,3 +185,5 @@ public class AssignmentDAO extends CommonDAO {
            
         }
      }
+	  
+	 
