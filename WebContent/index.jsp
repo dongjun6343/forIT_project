@@ -485,7 +485,14 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             
                <h3 class="mt-0 line-bottom line-height-1 theme-colored">instagram</h3>
-            
+            	
+            	
+            	
+            	
+            	
+            	</div>
+            			
+            		)
             </div>   
          
          
