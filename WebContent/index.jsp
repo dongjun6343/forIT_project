@@ -24,7 +24,7 @@
                 <!-- MAIN IMAGE -->
                 <img src="../resources/images/study2.png" alt=""  data-bgposition="center 10%" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
                 <!-- LAYERS -->	 
-
+ 
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption tp-resizeme text-uppercase text-white font-raleway"
                   id="rs-1-layer-1"
