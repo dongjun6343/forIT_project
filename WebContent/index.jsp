@@ -28,7 +28,7 @@
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption tp-resizeme text-uppercase text-white font-raleway"
                   id="rs-1-layer-1"
-
+ 
                   data-x="['left']"
                   data-hoffset="['30']"
                   data-y="['middle']"
