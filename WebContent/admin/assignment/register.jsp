@@ -65,8 +65,10 @@
 
 
                      <div class="form-group input-short">
+                     
                         <label for="exampleInputEmail1" class="col-sm-2 control-label">제목<span
                            class="must-mark">*</span></label>
+                           <input type ="hidden" name = "adminid" value="admin">
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 -->
                            <input type="text" name="assignTitle" class="form-control"

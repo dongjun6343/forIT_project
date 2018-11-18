@@ -139,48 +139,37 @@ public class AssignmentDAO extends CommonDAO {
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
-	}
-	public void updateReadCount(String assNum){
-		String sql = "update ASSIGNMENT set ASSCOUNT=ASSCOUNT+1 where ASSNUM=?";
-		
-		Connection conn = null;
-		PreparedStatement stmt = null;
-		try{
-			conn = getConnection();
-			stmt = conn.prepareStatement(sql);
-			stmt.setString(1, assNum);
-			stmt.executeQuery();
-			
-		}catch(SQLException e){
-			e.printStackTrace();
-		}finally{
-			 dbClose();
-		}	
-		
-	}
 	
-	 public void updateBoard(AssignmentVO aVo){
-	 String sql = "UPDATE ASSIGNMENT SET ASSTITLE=?,ASSDATE=?,ASSCONTENT=? WHERE ASSNUM=?";
-	 
-	 Connection conn = null;
-     Statement stmt = null;
-     ResultSet rs = null;
-
-     try {
-        conn = getConnection();
-        stmt = conn.prepareStatement(sql);
-        
-        rs = stmt.executeQuery(sql);
-
-        if (rs.next()) {
-      //     AssignmentVO aVo = new AssignmentVO();
-           //11-18일 여기서부터
-      //     aVo.setString(1, aVo.getAssTitle());
-           aVo.setAssDate(rs.getTimestamp("assDate"));
-           aVo.setAssContent(rs.getString("assContent"));
-           aVo.setAssCount(rs.getInt("assCount"));
-           //String 형식을 char형으로 변환
-           aVo.setAdminId(rs.getString("adminId"));
-           
-        }
-     }
+	}
+}
+//	public void updateReadCount(String assNum){
+//		String sql = "update ASSIGNMENT set ASSCOUNT=ASSCOUNT+1 where ASSNUM=?";
+//		
+//		Connection conn = null;
+//		PreparedStatement stmt = null;
+//		try{
+//			conn = getConnection();
+//			stmt = conn.prepareStatement(sql);
+//			stmt.setString(1, assNum);
+//			stmt.executeQuery();
+//			
+//		}catch(SQLException e){
+//			e.printStackTrace();
+//		}finally{
+//			 dbClose();
+//		}
+//	 }
+//	 public void updateBoard(AssignmentVO aVo){
+//	 String sql = "UPDATE ASSIGNMENT SET ASSTITLE=?,ASSDATE=?,ASSCONTENT=? WHERE ASSNUM=?";
+//	 
+//	 Connection conn = null;
+//     Statement stmt = null;
+//
+//
+//     try {
+//        conn = getConnection();
+//        stmt = conn.prepareStatement(sql);
+//        
+//
+//
+//        }
