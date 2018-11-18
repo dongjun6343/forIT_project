@@ -22,7 +22,8 @@ public class AdminAssignDetailAction implements Action{
 		System.out.println(assNum);
 		
 		AssignmentDAO aDao = AssignmentDAO.getInstance();
-//		aDao.updateReadCount(num);
+		//조회수 올리기
+		aDao.updateReadCount(assNum);
 		
 		AssignmentVO aVo = aDao.selectOneAssignementByNum(assNum);
 	

@@ -26,13 +26,14 @@ public class AdminAssignRegisterAction implements Action{
 //	      String assNum = request.getParameter("assignNum");
 	      String assTitle = request.getParameter("assignTitle");
 	      String assContent = request.getParameter("assignContent");
-	      String adminId = "admin";
+	      String adminId = request.getParameter("adminid");
 	      
 	   // Parameter 출력
 //	      System.out.println("assNum : " + assNum);
 	      System.out.println("assignTitle : " + assTitle);
 	      System.out.println("assignContent : " + assContent);
 	      System.out.println("adminId : " + adminId);
+	      
 	      // 객체 세팅
 	      aVo.setAssTitle(assTitle);
 	      aVo.setAssContent(assContent);

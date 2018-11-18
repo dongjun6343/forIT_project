@@ -17,7 +17,7 @@
          <div class="section-content">
             <div class="row">
                <div class="col-md-12">
-                  <h2 class="title text-white">오늘의 과제</h2>
+                  <h2 class="title text-white">공지사항 등록</h2>
                   <ol class="breadcrumb text-left text-white">
                      <li><a href="/">&nbsp;</a></li>
                   </ol>
@@ -26,110 +26,158 @@
          </div>
       </div>
    </section>
-<!-- Main content -->
-<section class="content">
-   <div class="row">
-      <!-- left column -->
-      <div class="col-md-12">
-         <!-- general form elements -->
-         <div class="box box-primary">
-            <div class="box-header">
-               <h3 class="box-title">상세보기</h3>
-            </div>
-            <!-- /.box-header -->
 
-<!-- 원래 주석 X 
-<form role="form" action="modifyPage" method="post">
 
-   <input type='hidden' name='bno' value="${boardVO.bno}"> <input
-      type='hidden' name='page' value="${cri.page}"> <input
-      type='hidden' name='perPageNum' value="${cri.perPageNum}">
-   <input type='hidden' name='searchType' value="${cri.searchType}">
-   <input type='hidden' name='keyword' value="${cri.keyword}">
+   <!-- main 
+   폼넣기
+중복되는부분빼고
+    -->
 
-</form>
- -->
-<form role="form" action="adminAssign" method="post"> 
- 			<!--value의 AssignmentVO는 AdminAssignDetailAction에 request.setAttribute("AssignmentVO", aVo);과 동일. -->
-            <div class="box-body">
-               <div class="form-group">
-                  <label for="exampleInputEmail1">제목</label> <input type="text"
-                     name='assTitle' class="form-control" value="${AssignmentVO.assTitle}"
-                     readonly="readonly">
+  <form role="form" method="post" class="form-horizontal"
+      action="/adminAssign?command=adminAssignModify">
+      <input type="hidden" name="validation">
+      <div class="box-body box-form-custom">
+         <div class="form-group input-short">
+            <div class="container">
+            <!-- /. side Menu  -->
+               <div class="col-md-2 mt-30 hidden-xs hidden-sm">
+                  <div class="sidebar sidebar-left mt-sm-30">
+                     <div class="widget">
+                        <h5 class="widget-title line-bottom">
+                        <a href="introGroup">커뮤니티 등록</a>
+                        </h5>
+                     <div class="categories">
+                        <ul class="list list-border angle-double-right">
+                           <li><a href="/admin/register">공지사항 등록 </a></li>
+                           <li><a href="/imgGallery/list">오늘의 과제 등록</a></li>
+                        </ul>
+                     </div>
+                     </div>
+                  </div>
                </div>
-               
-         		 <div class="form-group">
-                  <label for="exampleInputEmail1">내용</label> <input type="text"
-                     name='assContent' class="form-control" value="${AssignmentVO.assContent}"
-                     readonly="readonly">
-               </div> 
-               
-               
-             <!--    <div class="form-group">
-                  <label for="exampleInputPassword1">내용</label>
-                  <textarea class="form-control" name="assignContent" rows="3" cols = "30" 
-                     readonly="readonly"></textarea>
-              
+            
+               <div class="col-md-9 blog-pull-right">
+                  <div class="row">
+                     <div style="height: 50px;">
+                        <h4 class="line-bottom mt-20 mb-20 text-theme-colored">공지사항
+                           등록</h4>
+                     </div>
+
+
+                     <!--  readonly="readonly" : 고칠수 없게 막는 부분 -->
+                     <div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">제목<span
+                           class="must-mark"></span></label>
+                        <div class="col-sm-10">
+                        <!-- input type의 name중요시 -->
+                           <input type="text" name="assignTitle" class="form-control"
+                             value="${AssignmentVO.assTitle}" readonly="readonly">
+                        </div>
+                     </div>
+
+                     <div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">내용<span
+                           class="must-mark"></span></label>
+                        <div class="col-sm-10">
+                           <input type="text" name="assignContent" class="form-control"
+                             value="${AssignmentVO.assContent}" readonly="readonly"> <span id="assContent"></span>
+                        </div>
+                     </div>
                      
-               </div>   -->
-               
-               
-               <div class="form-group">
-                  <label for="exampleInputEmail1">작성자</label> <input type="text"
-                     name="adminId" class="form-control" value="${AssignmentVO.adminId}"
-                     readonly="readonly">
+                    <div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
+                           class="must-mark"></span></label>
+                        <div class="col-sm-10">
+                           <input type="text" name="adminId" class="form-control"
+                             value="${AssignmentVO.adminId}" readonly="readonly"> <span id="assContent"></span>
+                        </div>
+                     </div>
+                     
+                     
+
+
+                     <!-- /.box-body -->
+
+<div class="box-footer btn-group-center">
+                   
+                       <button id='modifyBtn' type="submit" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=adminAssignModify'">
+							<i class="fas fa-clipboard-list">수정</i>
+						</button>	  
+                        
+                        <button id='deleteBtn' type="submit" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=assignList'">
+							<i class="fas fa-trash-alt">삭제</i>
+						</button>
+                        
+
+                        
+					<button id='listBtn' type="button" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=assignList'">
+							<i class="fas fa-clipboard-list">글목록</i>
+						</button>
+                  </div>
                </div>
-            </div>
-            <!-- /.box-body -->
+            </div>   
+         </div>
+      </div>
+   </form>
+</div>
 
-            <div class="box-footer">
-               <button type="submit" class="btn btn-warning">수정</button>
-               <button type="submit" class="btn btn-danger">제거</button>
-               <button type="submit" class="btn btn-primary">목록으로</button>
-            </div>
 
-</form>
+<!-- /.content -->
+
+
 <script>
-   $(document).ready(function() {
+   var result = '${msg}';
 
-      var formObj = $("form[role='form']");
+   if (result == 'SUCCESS') {
+      alert("처리가 완료되었습니다.");
+   }
+</script>
+<!-- 스크립트 메세지 -->
 
-      console.log(formObj);
-      
+<!-- 페이지이동 스트립트 -->
 
-      $(".btn-warning").on("click", function() {
-         formObj.attr("action", "/adminAssign");
-         formObj.attr("method", "get");
-         formObj.submit();
-      });
+<script>
+   $(document).ready(
+         function() {
 
-      $(".btn-danger").on("click", function() {
-         formObj.attr("action", "/sboard/removePage");
-         formObj.submit();
-      });
+            $('#modifyBtn').on(
+                  "click",
+                  function(event) {
 
-      $(".btn-primary").on("click", function() {
-         formObj.attr("method", "get");
-         formObj.attr("action", "/adminAssign/");
-         formObj.submit();
-      });
+                     self.location = "/admin/assignment/modify.jsp"
+                           + '${pageMaker.makeQuery(1)}'
+                           + "&modifyBtn="
+                           + $("#searchType option:selected").val()
+                           + "&keyword=" + $('#keywordInput').val();
 
-   });
+                  });
+
+            $('#newBtn').on("click", function(evt) {
+
+               self.location = "/admin/assignment/register.jsp";
+
+            });
+
+         });
 </script>
 
+<!-- 검색버튼, 등록버튼 스크립트 -->
 
 
 
-         </div>
-         <!-- /.box -->
-      </div>
-      <!--/.col (left) -->
+<form>
+   <!--  id="jobForm"  -->
+   <input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
+   <input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>
 
-   </div>
-   <!-- /.row -->
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+</form>
+
+
+
+
+
 
 <%@include file="../include/footer.jsp"%>
