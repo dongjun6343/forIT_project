@@ -205,25 +205,28 @@
          <div class="header-nav-wrapper navbar-scrolltofixed bg-lightest">
             <div class="container">
                <nav id="menuzord-right" class="menuzord red"> <a
-                  class="menuzord-brand pull-left flip mt-5 mb-5" href="/"> <img
-                  src="../resources/images/logo1.png" alt="">
+                  class="menuzord-brand pull-left flip mt-5 mb-5" href="/"> 
+                <!--<img src="../resources/images/logo1.png" alt=""> -->
+                 	<img src="../resources/images/foritLogo.png" alt="">
+                 
                </a>
                <ul class="menuzord-menu dark">
-                  <li><a href="/Servlet?command=">대분류</a>
+                  <li><a href="clubIntroServlet?command=clubIntro">동아리 소개</a>
                      <ul class="dropdown">
-                        <li><a href="clubIntroServlet?command=clubIntro">세분류</a></li>
-                        <li><a href="/edugroup/value">세분류</a></li>
-                        <li><a href="/edugroup/history">세분류</a></li>
-                        <li><a href="/edugroup/people">세분류</a></li>
-                     </ul></li>
-			<!-- 강의 자료  -->
-                  <li><a href="/videoServlet?command=videoList">강의자료 </a>
+                  <!--	<li><a href="/edugroup/intro">세분류</a></li>
+                        <li><a href="/edugroup/value">세분류</a></li>	-->
+                        <li><a href="clubHistoryServlet?command=clubHistory">연혁</a></li>
+                        <li><a href="clubPeopleServlet?command=clubPeople">비전과 목표</a></li>
+                        
+                     </ul></li> 
+                  <li><a href="/company/introGroup">강의자료 </a>
                      <ul class="dropdown">
-                     
-                        <li><a href="/company/introGroup?division=1">세분류</a></li>
-                        <li><a href="/company/introGroup?division=2">세분류</a></li>
+                        <li><a href="/company/introGroup?division=1">JAVA</a></li>
+                        <li><a href="/company/introGroup?division=2">JSP</a></li>
+                        <li><a href="/company/introGroup?division=3">DataBase</a></li>
+                        <li><a href="/company/introGroup?division=4">ETC</a></li>
                      </ul></li>
-                  <li><a href="/program/list?compnums=1&categorize=1">대분류</a>
+                 <!--  <li><a href="/program/list?compnums=1&categorize=1">대분류</a>
                      <ul class="dropdown">
                         <li><a href="/program/list?compnums=1&categorize=1">세분류</a></li>
                      </ul></li>
@@ -231,24 +234,15 @@
                      <ul class="dropdown">
                         <li><a href="/apply/list?page=1&perPageNum=10&compnum=2">세분류</a></li>
                         <li><a href="/apply/list?page=1&perPageNum=10&compnum=3">세분류</a></li>
-                     </ul></li>
-                  <li><a href="AssignmentServlet?command=Assignment">커뮤니티</a>
+                     </ul></li> -->
+
+                  <li><a href="/notice/list">커뮤니티</a>
                      <ul class="dropdown">
                         <li><a href="noticeServlet?command=notice">공지사항</a></li>
-                        <li><a href="AssignmentServlet?command=Assignment">오늘의과제</a></li>
-                      
+                        <li><a href="/imgGallery/list">오늘의과제</a></li>
+                        <!-- <li><a href="/eventBoard/list">세분류</a></li>  -->
                      </ul></li>
 
-                <!--  <li><a href="NewsServlet?command=Newslist">대분류</a>
-                     <ul class="dropdown">
-                     	<li><a href="NewsServlet?command=Newslist">세분류</a></li>
-                     
-                        <li><a href="/news/list">세분류</a></li>  
-                        
-                        
-                        <li><a href="/review/list">세분류</a></li>
-                     </ul></li> -->
-                     
                </ul>
                </nav>
             </div>

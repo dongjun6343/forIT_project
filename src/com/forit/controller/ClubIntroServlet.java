@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.forit.action.Action;
 
 /**
- * Servlet implementation class ClubIntro
+ * Servlet implementation class ClubIntroServlet
  */
 @WebServlet("/clubIntroServlet")
 public class ClubIntroServlet extends HttpServlet {
@@ -28,15 +28,16 @@ public class ClubIntroServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String command = request.getParameter("command");
-		System.out.println("AssignmentServlet에서 요청을 받음을 확인 : + command");
-		ActionFactory af  = ActionFactory.getInstance();
-		Action action = af.getAction(command);
-		
-		if(action != null){
-			action.execute(request, response);
-		}
-	}
+        String command = request.getParameter("command");
+        System.out.println("ClubIntroServlet에서 요청을 받음을 확인 : + command");
+        ActionFactory af  = ActionFactory.getInstance();
+        Action action = af.getAction(command);
+        
+        if(action != null){
+           action.execute(request, response);
+       }
+    }  
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
