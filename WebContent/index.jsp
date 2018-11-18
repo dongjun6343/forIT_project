@@ -23,7 +23,7 @@
               <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="http://placehold.it/1920x1280" data-rotate="0" data-saveperformance="off" data-title="Slide 1" data-description="">
                 <!-- MAIN IMAGE -->
                 <img src="../resources/images/study2.png" alt=""  data-bgposition="center 10%" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
-                <!-- LAYERS -->
+                <!-- LAYERS -->	
 
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption tp-resizeme text-uppercase text-white font-raleway"
