@@ -33,8 +33,8 @@
 중복되는부분빼고
     -->
 
-   <form role="form" method="post" class="form-horizontal"
-      action="/adminAssign?command=adminaAssignRegEnd">
+  <form role="form" method="post" class="form-horizontal"
+      action="/adminAssign?command=adminAssignModify">
       <input type="hidden" name="validation">
       <div class="box-body box-form-custom">
          <div class="form-group input-short">
@@ -63,7 +63,8 @@
                            등록</h4>
                      </div>
 
-					<!--  readonly="readonly" : 고칠수 없게 막는 부분 -->
+
+                     <!--  readonly="readonly" : 고칠수 없게 막는 부분 -->
                      <div class="form-group input-short">
                         <label for="exampleInputEmail1" class="col-sm-2 control-label">제목<span
                            class="must-mark"></span></label>
@@ -97,19 +98,24 @@
 
                      <!-- /.box-body -->
 
-                     <div class="box-footer btn-group-center">
-                        <button type="button" class="btn btn-cancel">취소</button>
-                        <button type="submit" class="btn btn-primary" >삭제</button>
+<div class="box-footer btn-group-center">
+                   
+                       <button id='modifyBtn' type="submit" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=adminAssignModify'">
+							<i class="fas fa-clipboard-list">수정</i>
+						</button>	  
                         
-                       <div class="col-md-2 mt-5 pull-left" >
-				<!-- "location.href='/adminAssign?command=adminAssignModify&assNum=${AssignmentVO.assNum}'" -->
-					<button id='modifyBtn' type="submit" class="btn btn-default" onclick="location.href='/adminAssign?command=adminAssignModify&assNum=${AssignmentVO.assNum}'">
-							
-							<i class="fa fa-pencil" >수정</i> 
-						</button>	
-		
-					</div>
-                     </div>
+                        <button id='deleteBtn' type="submit" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=assignList'">
+							<i class="fas fa-trash-alt">삭제</i>
+						</button>
+                        
+
+                        
+					<button id='listBtn' type="button" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=assignList'">
+							<i class="fas fa-clipboard-list">글목록</i>
+						</button>
                   </div>
                </div>
             </div>   

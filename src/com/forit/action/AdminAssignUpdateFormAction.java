@@ -16,12 +16,12 @@ public class AdminAssignUpdateFormAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String url = "admin/assignment/modifyPage.jsp";
+		
 		String assNum = request.getParameter("assNum");
 		
 		AssignmentDAO aDao = AssignmentDAO.getInstance();
 		
 		aDao.updateReadCount(assNum);
-		
 		AssignmentVO aVo = aDao.selectOneAssignementByNum(assNum);
 		
 		request.setAttribute("assignment", aVo);

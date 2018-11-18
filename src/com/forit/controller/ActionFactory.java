@@ -69,8 +69,8 @@ public class ActionFactory {
 		}	else if (command.equals("adminAssignModify")){
 			
 			action = new AdminAssignUpdateFormAction();
-		}
 		
+		}
 			else if (command.equals("clubIntro")){
 			
 			action = new ClubIntroAction();

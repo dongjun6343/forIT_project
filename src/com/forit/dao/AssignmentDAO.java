@@ -141,35 +141,42 @@ public class AssignmentDAO extends CommonDAO {
 		}
 	
 	}
+//오늘의과제 조회수 올리기
+	public void updateReadCount(String assNum){
+		String sql = "update ASSIGNMENT set ASSCOUNT=ASSCOUNT+1 where ASSNUM=?";
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try{
+			conn = getConnection();
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, assNum);
+			stmt.executeQuery();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			 dbClose();
+		}
+	 }
+//오늘의 과제 수정
+	public void updateAssignment(AssignmentVO aVo) {
+		String sql = "UPDATE ASSIGNMENT SET ASSTITLE=?,ASSCONTENT=? WHERE ASSNUM=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, aVo.getAssTitle());
+			pstmt.setString(2, aVo.getAssContent());
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+	}
 }
-//	public void updateReadCount(String assNum){
-//		String sql = "update ASSIGNMENT set ASSCOUNT=ASSCOUNT+1 where ASSNUM=?";
-//		
-//		Connection conn = null;
-//		PreparedStatement stmt = null;
-//		try{
-//			conn = getConnection();
-//			stmt = conn.prepareStatement(sql);
-//			stmt.setString(1, assNum);
-//			stmt.executeQuery();
-//			
-//		}catch(SQLException e){
-//			e.printStackTrace();
-//		}finally{
-//			 dbClose();
-//		}
-//	 }
-//	 public void updateBoard(AssignmentVO aVo){
-//	 String sql = "UPDATE ASSIGNMENT SET ASSTITLE=?,ASSDATE=?,ASSCONTENT=? WHERE ASSNUM=?";
-//	 
-//	 Connection conn = null;
-//     Statement stmt = null;
-//
-//
-//     try {
-//        conn = getConnection();
-//        stmt = conn.prepareStatement(sql);
-//        
-//
-//
-//        }
