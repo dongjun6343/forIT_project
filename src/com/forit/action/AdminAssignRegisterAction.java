@@ -42,14 +42,12 @@ public class AdminAssignRegisterAction implements Action{
 	      
 	      aDao.insertAssignment(aVo);
 
-		
+		  request.setAttribute("msg", "글을 작성했습니다");
 //			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 //			dispatcher.forward(request, response);
 	      
 	      //AssignListAction불러오기(List에 디비가 담겨있음)
 	      new AdminAssignListAction().execute(request, response);
-	      
-	      
 		}
 	}
 	

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.forit.dto.AssignmentVO;
+import com.forit.util.Paging;
 
 public class AssignmentDAO extends CommonDAO {
 	private static AssignmentDAO instance;
@@ -60,6 +61,98 @@ public class AssignmentDAO extends CommonDAO {
 	   }
 
 
+	public List<AssignmentVO> selectAllAssignmentsPerPage(Paging paging) {
+	    
+		  String sql = "SELECT ASS.*"
+		  		+ "       FROM (SELECT ROWNUM RNUM"
+		  		+ "                  , ASS.ASSNUM"
+		  		+ "                  , ASS.ASSTITLE"
+		  		+ "                  , ASS.ASSDATE"
+		  		+ "                  , ASS.ASSCONTENT"
+		  		+ "                  , ASS.ASSCOUNT"
+		  		+ "                  , ASS.ASSACTIVE"
+		  		+ "                  , ASS.ADMINID"
+		  		+ "               FROM ASSIGNMENT ASS"
+		  		+ "              ORDER BY ASS.ASSNUM DESC) ASS"
+		  		+ "      WHERE ASS.RNUM BETWEEN ? AND ?";
+			
+	      List<AssignmentVO> list = new ArrayList<AssignmentVO>();
+	      Connection conn = null;
+	      PreparedStatement stmt = null;
+	      ResultSet rs = null;
+
+	      try {
+	         conn = getConnection();
+	         stmt = conn.prepareStatement(sql);
+	         
+	         
+	         
+	         stmt.setInt(1, ((paging.getPageNum() - 1) * 10) + 1);
+	         stmt.setInt(2, ((paging.getPageNum() - 1) * 10) + 1 + 9);
+	         
+	         rs = stmt.executeQuery();
+	         
+	         while (rs.next()) {
+	            AssignmentVO aVo = new AssignmentVO();
+	            
+	            aVo.setAssNum(rs.getInt("assNum"));
+	            aVo.setAssTitle(rs.getString("assTitle"));
+	            aVo.setAssDate(rs.getTimestamp("assDate"));
+	            aVo.setAssContent(rs.getString("assContent"));
+	            aVo.setAssCount(rs.getInt("assCount"));
+	            //String 형식을 char형으로 변환
+	            aVo.setAssActive(rs.getString("assActive").charAt(0));
+	            aVo.setAdminId(rs.getString("adminId"));
+	            
+	            
+	            list.add(aVo);
+	         }
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         dbClose();
+	      }
+	      return list;
+	   }
+	
+	
+	public Paging selectAssRowCount(Paging paging)
+	{
+		int cnt = 0;
+		
+		String sql = "SELECT COUNT(*) CNT"
+				+ "     FROM ASSIGNMENT";
+		
+		Connection conn = null;
+	      PreparedStatement stmt = null;
+	      ResultSet rs = null;
+	      
+	      try
+	      {
+	    	  conn = getConnection();
+	    	  stmt = conn.prepareStatement(sql);
+	    	  
+	    	  rs = stmt.executeQuery();
+	    	  
+	    	  while (rs.next())
+	    	  {
+	    		  cnt = rs.getInt("CNT");
+	    		  paging.setNumOfRow(cnt);;
+	    	  }
+	    	  
+	      }
+	      catch (SQLException e)
+	      {
+	    	  e.printStackTrace();
+	      }
+	      finally
+	      {
+	    	  dbClose();
+	      }
+	      
+	      return paging;
+	}
+	
 	//과제 등록
 	public void insertAssignment(AssignmentVO aVo){
 		 String sql = "insert into ASSIGNMENT( " 

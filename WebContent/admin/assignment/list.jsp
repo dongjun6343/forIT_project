@@ -84,20 +84,19 @@
 									<li><a href="#" aria-label="Previous"> <span
 											aria-hidden="true">«</span>
 									</a></li>
-									<c:if test="${pageMaker.prev}">
+									<c:if test="${paging.pageNum > 1}">
 										<li><a
 											href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
 									</c:if>
 
-									<c:forEach begin="${pageMaker.startPage }"
-										end="${pageMaker.endPage }" var="idx">
-										<li
-											<c:out value="${pageMaker.cri.page == idx?'class =active':''}" />>
+									<c:forEach begin="${paging.pageNum}"
+										end="${paging.pageNum + 9}" var="idx">
+										<li>
 											<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
 										</li>
 									</c:forEach>
 
-									<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+									<c:if test="${paging.lastPage == paging.pageNum}">
 										<li><a
 											href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 									</c:if>

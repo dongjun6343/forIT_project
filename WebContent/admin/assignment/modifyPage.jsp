@@ -71,8 +71,9 @@
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 -->
+                        	<input type="hidden" name="assNum" value="${AssignmentVO.assNum}">
                            <input type="text" name="assTitle" class="form-control"
-                             value="${AssignmentVO.assTitle} ${AssignmentVO.assNum}">
+                             value="${AssignmentVO.assTitle}">
                         </div>
                      </div>
 

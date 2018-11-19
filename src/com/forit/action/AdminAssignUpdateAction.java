@@ -6,6 +6,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.ParseConversionEvent;
 
 import com.forit.dao.AssignmentDAO;
 import com.forit.dto.AssignmentVO;
@@ -40,10 +41,12 @@ public class AdminAssignUpdateAction implements Action {
 //		aVo.setAssTitle(request.getParameter("assTitle"));
 //		aVo.setAssContent(request.getParameter("assContent"));
 //		aVo.setAdminId(request.getParameter("adminId"));
-		aVo.setAssNum(Integer.valueOf(assNum));
+		aVo.setAssNum(Integer.parseInt(assNum));
 		aVo.setAssTitle(assTitle);
 		aVo.setAssContent(assContent);
 		aVo.setAdminId(adminId);
+		
+		
 		
 		request.setAttribute("AssignmentVO", aVo);
 
