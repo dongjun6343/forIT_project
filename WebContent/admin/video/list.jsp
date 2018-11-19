@@ -53,7 +53,7 @@
 
             <div class="row">
 				<div class="col-md-12">
-		            <h3 class="widget-title line-bottom">동영상 게시판</h3>
+		            <h3 class="widget-title line-bottom">강의자료 게시판</h3>
 		            <hr>
                 <div class="col-md-10 blog-pull-right">
 
@@ -125,7 +125,7 @@
                                 <select name="listType" class="form-control" onchange="if(this.value) location.href=(this.value);">
                                     <option value="/video/list?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType}&keyword=${cri.keyword}">정렬
                                         기준
-                                    </option><!-- videoBoard -->
+                                    </option><!-- videoBoard 링크 다시 찍어주기 -->
                                     <option <c:out value="${cri.listType eq 'dd'?'selected':''}" /> value="/video/list?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType}&keyword=${cri.keyword}&listType=dd">최신순
                                     </option>
                                     <option <c:out value="${cri.listType eq 'da'?'selected':''}" /> value="/video/list?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType}&keyword=${cri.keyword}&listType=da">오래된순
