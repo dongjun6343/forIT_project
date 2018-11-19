@@ -208,7 +208,7 @@
                   class="menuzord-brand pull-left flip mt-5 mb-5" href="/"> 
                 <!--<img src="../resources/images/logo1.png" alt=""> -->
                  	<img src="../resources/images/foritLogo.png" alt="">
-                 
+                  
                </a>
                <ul class="menuzord-menu dark">
                   <li><a href="clubServlet?command=clubIntro">동아리 소개</a>
