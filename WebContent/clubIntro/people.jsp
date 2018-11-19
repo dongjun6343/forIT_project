@@ -167,13 +167,13 @@
 			<div class="col-sm-2 mt-30">
             <div class="sidebar sidebar-left mt-sm-30">
                 <div class="widget">
-                    <h5 class="widget-title line-bottom"><a href="clubIntroServlet?command=clubIntro">동아리 소개</a></h5>
+                    <h5 class="widget-title line-bottom"><a href="clubServlet?command=clubIntro">동아리 소개</a></h5>
                     <div class="categories">
                         <ul class="list list-border angle-double-right">
                       <!--  <li><a href="/edugroup/intro">그룹소개</a></li>
                             <li><a href="/edugroup/value">핵심가치</a></li> -->
-                            <li><a href="clubHistoryServlet?command=clubHistory">연혁</a></li>
-                            <li><a href="clubPeopleServlet?command=clubPeople">비전과 목표</a></li>
+                            <li><a href="clubServlet?command=clubHistory">연혁</a></li>
+                            <li><a href="clubServlet?command=clubPeople">비전과 목표</a></li>
                         </ul>
                     </div>
                 </div>

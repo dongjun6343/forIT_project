@@ -104,8 +104,8 @@ font-size : 12px;
                         <ul class="list list-border angle-double-right">
                       <!--  <li><a href="/edugroup/intro">그룹소개</a></li>
                             <li><a href="/edugroup/value">핵심가치</a></li> -->
-                            <li><a href="clubHistoryServlet?command=clubHistory">연혁</a></li>
-                            <li><a href="clubPeopleServlet?command=clubPeople">비전과 목표</a></li>
+                            <li><a href="clubServlet?command=clubHistory">연혁</a></li>
+                            <li><a href="clubServlet?command=clubPeople">비전과 목표</a></li>
                         </ul>
                     </div>	
                 </div>

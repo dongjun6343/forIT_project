@@ -448,7 +448,7 @@
 
             <div id="grid" class="gallery-isotope grid-3 gutter clearfix">
                <c:forEach items="${list}" var="EventVO" end="2">
-                  <a href="/eventBoard/read?page=1&perPageNum=10&searchType&listType&keyword&num=${EventVO.num}">
+                  <a href="/eventBoard/read?page=1&perPageNum=10&searchType&listType&keyword&num=${EventVO.num}">     
                      <div class="col-xs-12 col-sm-6 col-md-4 pb-sm-20">
                         <div class="image-box-thum" style="height: 56.25%; text-align:center">
                            <c:if test="${EventVO.name eq null}">
@@ -482,22 +482,36 @@
    
             
             <!-- instagram plugin -->
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-xs-12">
             
-               <h3 class="mt-0 line-bottom line-height-1 theme-colored">instagram</h3>
-            	
-            	
-            	
-            	
-            	
-            	</div>
-            			
-            		)
-            </div>   
-         
-         
-   </div>
-</section>
+               <h3 class="mt-0 line-bottom line-height-1 theme-colored">Instagram</h3>
+           	<script type="text/javascript" src="/js/instafeed.min.js"></script>
+				<script type="text/javascript">    
+					var userFeed = new Instafeed({
+    				get: 'user',
+    				userId: 8752161969,
+    				sortBy: "most-recent",
+    				limit: 7,
+    				template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>', 
+   					 // {{link}} : 게시물 링크, {{image}} : 사진 url, {{caption}} : 게시물 텍스트
+    				accessToken: '8752161969.191a3e2.55408af509f840f28dda487b4bf41c95'	
+    				});
+ 
+					userFeed.run();
+					</script>
+ 
+					<div id="instafeed"></div>
+​
+            			</div> 
+       
+ 
+    <div class="slider autoplay" style="height:210px;"></div>
+   
+  							</body>
+						</html>    	
+            		</div>  
+  				 </div>
+		</section>
       </div>
     </section>
 </div>

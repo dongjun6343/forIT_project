@@ -211,12 +211,12 @@
                  
                </a>
                <ul class="menuzord-menu dark">
-                  <li><a href="clubIntroServlet?command=clubIntro">동아리 소개</a>
+                  <li><a href="clubServlet?command=clubIntro">동아리 소개</a>
                      <ul class="dropdown">
                   <!--	<li><a href="/edugroup/intro">세분류</a></li>
                         <li><a href="/edugroup/value">세분류</a></li>	-->
-                        <li><a href="clubHistoryServlet?command=clubHistory">연혁</a></li>
-                        <li><a href="clubPeopleServlet?command=clubPeople">비전과 목표</a></li>
+                        <li><a href="clubServlet?command=clubHistory">연혁</a></li>
+                        <li><a href="clubServlet?command=clubPeople">비전과 목표</a></li>
                         
                      </ul></li> 
                   <li><a href="/company/introGroup">강의자료 </a>

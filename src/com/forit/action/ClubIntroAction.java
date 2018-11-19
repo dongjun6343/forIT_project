@@ -12,7 +12,8 @@ public class ClubIntroAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String url = "/edugroup/intro.jsp";
+		
+		String url = "/clubIntro/intro.jsp";
 		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

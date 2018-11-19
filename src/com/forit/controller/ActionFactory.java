@@ -6,7 +6,6 @@ import com.forit.action.AdminAssignRegisterAction;
 import com.forit.action.AdminAssignmentRegFormAction;
 import com.forit.action.ClubHistoryAction;
 import com.forit.action.AdminAssignListAction;
-import com.forit.action.AdminAssignUpdateFormAction;
 import com.forit.action.ClubIntroAction;
 import com.forit.action.ClubPeopleAction;
 import com.forit.action.LoginAction;
@@ -58,42 +57,38 @@ public class ActionFactory {
 		} else if (command.equals("adminaAssignRegEnd")) {
 
 			action = new AdminAssignRegisterAction();
-			
+
 			// 오늘의과제 상세보기
 		} else if (command.equals("adminAssignDetail")) {
 
 			action = new AdminAssignDetailAction();
-			
+
 			// 오늘의 과제 리스트
 		} else if (command.equals("assignList")) {
 
 			action = new AdminAssignListAction();
-			
-			// 오늘의 과제 수정
-		} else if (command.equals("adminAssignModify")) {
 
-			action = new AdminAssignUpdateFormAction();
 		}
-		   // 공지사항
+		// 공지사항
 		else if (command.equals("notice")) {
 
 			action = new NoticeAction();
-		  
+
 			// 동아리소개
 		} else if (command.equals("clubIntro")) {
 
-			action = new ClubIntroAction(); 
-			
+			action = new ClubIntroAction();
+
 			// 연혁소개
 		} else if (command.equals("clubHistory")) {
 
-			action = new ClubHistoryAction(); 
+			action = new ClubHistoryAction();
 
 		}
-			//목표소개
+		// 목표소개
 		else if (command.equals("clubPeople")) {
 
-			action = new ClubPeopleAction(); 
+			action = new ClubPeopleAction();
 		}
 
 		return action;
