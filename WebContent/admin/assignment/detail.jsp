@@ -33,8 +33,7 @@
 중복되는부분빼고
     -->
 
-  <form role="form" method="post" class="form-horizontal"
-      action="/adminAssign?command=adminAssignModify">
+  <form role="form" method="post" class="form-horizontal">
       <input type="hidden" name="validation">
       <div class="box-body box-form-custom">
          <div class="form-group input-short">
@@ -71,7 +70,7 @@
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 -->
                            <input type="text" name="assignTitle" class="form-control"
-                             value="${AssignmentVO.assTitle}" readonly="readonly">
+                             value="${AssignmentVO.assTitle}  ${AssignmentVO.assNum}  " readonly="readonly">
                         </div>
                      </div>
 
@@ -100,17 +99,16 @@
 
 <div class="box-footer btn-group-center">
                    
-                       <button id='modifyBtn' type="submit" class="btn btn-default" 
-					onclick="location.href='/adminAssign?command=adminAssignModify'">
+                       <button id='modifyBtn' type="button" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=adminAssignModifyForm&assNum=${AssignmentVO.assNum}'">
 							<i class="fas fa-clipboard-list">수정</i>
 						</button>	  
                         
-                        <button id='deleteBtn' type="submit" class="btn btn-default" 
-					onclick="location.href='/adminAssign?command=assignList'">
+                        <button id='deleteBtn' type="button" class="btn btn-default" 
+					onclick="location.href='/adminAssign?command=assignDelete&assNum=${AssignmentVO.assNum}'">
 							<i class="fas fa-trash-alt">삭제</i>
 						</button>
                         
-
                         
 					<button id='listBtn' type="button" class="btn btn-default" 
 					onclick="location.href='/adminAssign?command=assignList'">
@@ -139,7 +137,7 @@
 
 <!-- 페이지이동 스트립트 -->
 
-<script>
+<!-- <script>
    $(document).ready(
          function() {
 
@@ -162,7 +160,7 @@
             });
 
          });
-</script>
+</script> -->
 
 <!-- 검색버튼, 등록버튼 스크립트 -->
 
@@ -170,8 +168,8 @@
 
 <form>
    <!--  id="jobForm"  -->
-   <input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
-   <input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>
+   <input type='hidden' name="page" value='${pageMaker.cri.perPageNum}'>
+   <input type='hidden' name="perPageNum" value='${pageMaker.cri.perPageNum}'>
 
 </form>
 

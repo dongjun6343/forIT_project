@@ -127,7 +127,7 @@ public class AssignmentDAO extends CommonDAO {
 	
 	//게시글 삭제하기.
 	public void deleteAssignment(String assNum){
-		String sql = "delete Assignment where ASSNUM=?";
+		String sql = "DELETE ASSIGNMENT WHERE ASSNUM=?";
 		
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -171,6 +171,8 @@ public class AssignmentDAO extends CommonDAO {
 
 			pstmt.setString(1, aVo.getAssTitle());
 			pstmt.setString(2, aVo.getAssContent());
+			pstmt.setInt(3, aVo.getAssNum());
+			
 			pstmt.executeUpdate();
 
 		} catch (SQLException e) {

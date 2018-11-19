@@ -36,7 +36,7 @@
     -->
 
    <form role="form" method="post" class="form-horizontal"
-      action="/adminAssign?command=adminaAssignRegEnd">
+      action="/adminAssign?command=adminAssignModify">
       <input type="hidden" name="validation">
       <div class="box-body box-form-custom">
          <div class="form-group input-short">
@@ -46,7 +46,7 @@
                   <div class="sidebar sidebar-left mt-sm-30">
                      <div class="widget">
                         <h5 class="widget-title line-bottom">
-                        <a href="introGroup">커뮤니티 등록</a>
+                        <a href="assignment">오늘의 과제 수정</a>
                         </h5>
                      <div class="categories">
                         <ul class="list list-border angle-double-right">
@@ -61,8 +61,8 @@
                <div class="col-md-9 blog-pull-right">
                   <div class="row">
                      <div style="height: 50px;">
-                        <h4 class="line-bottom mt-20 mb-20 text-theme-colored">공지사항
-                           등록</h4>
+                        <h4 class="line-bottom mt-20 mb-20 text-theme-colored">오늘의 과제
+                           수정</h4>
                      </div>
 
 
@@ -71,16 +71,16 @@
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 -->
-                           <input type="text" name="assignTitle" class="form-control"
-                             value="${AssignmentVO.assTitle}">
+                           <input type="text" name="assTitle" class="form-control"
+                             value="${AssignmentVO.assTitle} ${AssignmentVO.assNum}">
                         </div>
                      </div>
 
                      <div class="form-group input-short">
                         <label for="exampleInputEmail1" class="col-sm-2 control-label">내용<span
                            class="must-mark"></span></label>
-                        <div class="col-sm-10">
-                           <input type="text" name="assignContent" class="form-control"
+                         <div class="col-sm-10"> 
+                           <input type="text" name="assContent" class="form-control"
                              value="${AssignmentVO.assContent}"> <span id="assContent"></span>
                         </div>
                      </div>
@@ -88,10 +88,11 @@
                     <div class="form-group input-short">
                         <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
                            class="must-mark"></span></label>
-                        <div class="col-sm-10">
-                           <input type="text" name="adminId" class="form-control"
-                             value="${AssignmentVO.adminId}" readonly="readonly"> <span id="assContent"></span>
-                        </div>
+                       <!--  <div class="col-sm-10"> -->
+                         <input type ="hidden" name = "adminid" value="admin" readonly="readonly">
+                        <%--    <input type="text" name="adminId" class="form-control"
+                             value="${AssignmentVO.adminId}" > <span id="assContent"></span>
+                        </div> --%>
                      </div>
                      
                      
@@ -126,7 +127,7 @@
 
 <!-- 페이지이동 스트립트 -->
 
-<script>
+<!-- <script>
    $(document).ready(
          function() {
 
@@ -149,7 +150,7 @@
             });
 
          });
-</script>
+</script> -->
 <!-- 검색버튼, 등록버튼 스크립트 -->
 
 
