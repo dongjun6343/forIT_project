@@ -9,7 +9,7 @@
 
 <!-- Start main-content -->
 <div class="main-content"> 
-   
+    
     <!-- Section: home -->
     <section id="home">
       <div class="container-fluid p-0">
