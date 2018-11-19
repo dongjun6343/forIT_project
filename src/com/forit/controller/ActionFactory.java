@@ -1,11 +1,13 @@
 package com.forit.controller;
 
 import com.forit.action.Action;
+import com.forit.action.AdminAssignDeleteAction;
 import com.forit.action.AdminAssignDetailAction;
-import com.forit.action.AdminAssignRegisterAction;
-import com.forit.action.AdminAssignmentRegFormAction;
 import com.forit.action.AdminAssignListAction;
+import com.forit.action.AdminAssignRegisterAction;
+import com.forit.action.AdminAssignUpdateAction;
 import com.forit.action.AdminAssignUpdateFormAction;
+import com.forit.action.AdminAssignmentRegFormAction;
 import com.forit.action.ClubIntroAction;
 import com.forit.action.LoginAction;
 import com.forit.action.MainAction;
@@ -65,13 +67,21 @@ public class ActionFactory {
 		}	else if (command.equals("assignList")){
 			
 			action = new AdminAssignListAction();
-			//오늘의 과제 수정
-		}	else if (command.equals("adminAssignModify")){
+			//오늘의 과제 수정 화면으로 이동 
+		}	else if (command.equals("adminAssignModifyForm")){
 			
 			action = new AdminAssignUpdateFormAction();
 		
-		}
-			else if (command.equals("clubIntro")){
+			//오늘의 과제 수정
+		}	else if (command.equals("adminAssignModify")){
+			
+			action = new AdminAssignUpdateAction();
+		
+		}	else if (command.equals("adminAssignDelete")){
+			
+			action = new AdminAssignDeleteAction();
+		
+		}	else if (command.equals("clubIntro")){
 			
 			action = new ClubIntroAction();
 			//공지사항

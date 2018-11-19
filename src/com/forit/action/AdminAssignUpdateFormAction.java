@@ -19,12 +19,16 @@ public class AdminAssignUpdateFormAction implements Action{
 		
 		String assNum = request.getParameter("assNum");
 		
+		System.out.println("assNumUpdateForm ==> " + assNum);
+		
 		AssignmentDAO aDao = AssignmentDAO.getInstance();
 		
 		aDao.updateReadCount(assNum);
 		AssignmentVO aVo = aDao.selectOneAssignementByNum(assNum);
 		
-		request.setAttribute("assignment", aVo);
+		request.setAttribute("AssignmentVO", aVo);
+		
+		System.out.println(aVo);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
