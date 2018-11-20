@@ -6,7 +6,7 @@
    media="all" />
 <%@ include file="./include/header.jsp"%>
 <%-- <%@ include file="./exboard/list.jsp"%> --%>
-
+ 
 <!-- Start main-content -->
 <div class="main-content"> 
     
