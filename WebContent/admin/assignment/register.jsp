@@ -17,7 +17,7 @@
          <div class="section-content">
             <div class="row">
                <div class="col-md-12">
-                  <h2 class="title text-white">공지사항 등록</h2>
+                  <h2 class="title text-white">오늘의과제 등록</h2>
                   <ol class="breadcrumb text-left text-white">
                      <li><a href="/">&nbsp;</a></li>
                   </ol>
@@ -34,7 +34,7 @@
     -->
 
    <form role="form" method="post" class="form-horizontal"
-      action="/adminAssign?command=adminaAssignRegEnd">
+      action="/adminAssign?command=adminAssignRegister">
       <input type="hidden" name="validation">
       <div class="box-body box-form-custom">
          <div class="form-group input-short">
@@ -59,7 +59,7 @@
                <div class="col-md-9 blog-pull-right">
                   <div class="row">
                      <div style="height: 50px;">
-                        <h4 class="line-bottom mt-20 mb-20 text-theme-colored">공지사항
+                        <h4 class="line-bottom mt-20 mb-20 text-theme-colored">오늘의과제
                            등록</h4>
                      </div>
 
@@ -71,6 +71,7 @@
                            <input type ="hidden" name = "adminid" value="admin">
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 -->
+                           
                            <input type="text" name="assignTitle" class="form-control"
                               placeholder="제목을 입력해주세요">
                         </div>

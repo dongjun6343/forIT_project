@@ -70,7 +70,7 @@
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 -->
                            <input type="text" name="assignTitle" class="form-control"
-                             value="${AssignmentVO.assTitle}  ${AssignmentVO.assNum}  " readonly="readonly">
+                             value="${AssignmentVO.assTitle}" readonly="readonly">
                         </div>
                      </div>
 
@@ -111,7 +111,7 @@
                         
                         
 					<button id='listBtn' type="button" class="btn btn-default" 
-					onclick="location.href='/adminAssign?command=assignList'">
+					onclick="location.href='/adminAssign?command=adminAssignList'">
 							<i class="fas fa-clipboard-list">글목록</i>
 						</button>
                   </div>

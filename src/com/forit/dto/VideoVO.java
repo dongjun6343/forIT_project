@@ -59,10 +59,10 @@ public class VideoVO {
 	public void setvCount(int vCount) {
 		this.vCount = vCount;
 	}
-	public String getadminId() {
+	public String getAdminId() {
 		return adminId;
 	}
-	public void setadminID(String adminId) {
+	public void setAdminID(String adminId) {
 		this.adminId = adminId;
 	}
 	//to string overriding

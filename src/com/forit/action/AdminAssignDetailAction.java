@@ -26,7 +26,8 @@ public class AdminAssignDetailAction implements Action{
 		aDao.updateReadCount(assNum);
 		
 		AssignmentVO aVo = aDao.selectOneAssignementByNum(assNum);
-	
+		
+		//detail의 value부분과 똑같이(AssignmentVo)
 		request.setAttribute("AssignmentVO", aVo);
 		
 

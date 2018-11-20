@@ -1,7 +1,6 @@
 package com.forit.action;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -21,18 +20,18 @@ public class AdminVideoListAction implements Action{
       
       VideoDAO vDao = VideoDAO.getInstance();
       
-      /*List<VideoVO> videoList = vDao.selectAllVideos();*/
-      List<VideoVO> videoList = new ArrayList<VideoVO>();
+      List<VideoVO> videoList = vDao.selectAllVideos();
+      /*List<VideoVO> videoList = new ArrayList<VideoVO>();*/
+      /*videoList = 	vDao.selectAllVideos();*/
       
-      
-      videoList = 	vDao.selectAllVideos();
       request.setAttribute("videoList", videoList);
+      
       System.out.println(videoList);
-      
-      
       
       RequestDispatcher dispatcher = request.getRequestDispatcher(url);//url을 찍어줘야됨
       dispatcher.forward(request, response);
+      
+      
    }
    
 }

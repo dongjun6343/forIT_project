@@ -8,7 +8,7 @@
 <%@include file="../include/header.jsp"%>
 
 <div class="main-content">
-	<!-- Section : inner-header // AssignmentServlet?command=assignList  -->
+	<!-- Section : inner-header // adminAssign?command=adminAssignList  -->
 	<section
 	
 		class="inner-header divider parallax layer-overlay overlay-dark-5"
@@ -20,7 +20,7 @@
 					<div class="col-md-12">
 						<h2 class="title text-white">오늘의과제</h2>
 						<ol class="breadcrumb text-left text-white">
-							<li><a href="/adminAssign?command=assignList">&nbsp;</a></li>
+							<!--  <li><a href="/adminAssign?command=adminAssignList"></a></li> -->
 						</ol>
 					</div>
 

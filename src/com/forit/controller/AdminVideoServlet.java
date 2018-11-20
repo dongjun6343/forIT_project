@@ -12,7 +12,7 @@ import com.forit.action.Action;
 /**
  * Servlet implementation class AdminVideoSurvlet
  */
-@WebServlet("/AdminVideoServlet")
+@WebServlet("/adminVideo")
 public class AdminVideoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

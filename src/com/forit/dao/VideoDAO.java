@@ -24,14 +24,14 @@ public class VideoDAO extends CommonDAO {
    public List<VideoVO> selectAllVideos() {
        
          String sql = "SELECT VNUM "
-         			+ "     , VTITLE"
-         			+ "		, VDATE"
-         			+ "		, VCONTENT"
-         			+ "		, VSUBJECT"
-         			+ "		, VURL"
-         			+ "		, VCONTENT"
-         			+ "		, ADMINID "
-         			+ "  FROM VIDEO";
+                  + "     , VTITLE"
+                  + "      , VDATE"
+                  + "      , VCONTENT"
+                  + "      , VSUBJECT"
+                  + "      , VURL"
+                  + "      , VCOUNT"
+                  + "      , ADMINID "
+                  + "  FROM VIDEO";
          
          List<VideoVO> list = new ArrayList<VideoVO>();
          Connection conn = null;
@@ -54,7 +54,7 @@ public class VideoDAO extends CommonDAO {
                vVo.setvSubject(rs.getString("vSubject"));
                vVo.setvUrl(rs.getString("vUrl"));
                vVo.setvCount(rs.getInt("vCount"));
-               vVo.setadminID(rs.getString("adminId"));
+               vVo.setAdminID(rs.getString("adminId"));
                 
                
                list.add(vVo);
@@ -71,12 +71,12 @@ public class VideoDAO extends CommonDAO {
    //과제 등록
    public void insertVideo(VideoVO vVo){
        String sql = "insert into VIDEO(VNUM"
-       			  + "				 , VTITLE"
-       			  + "				 , VCONTENT"
-       			  + "				 , VSUBJECT"
-       			  + "				 , VURL"
-       			  + "                , ADMINID) "
-       			  + "values (VIDEO_SEQ.nextval, ?, ?, ?, ?, ?)";
+                  + "             , VTITLE"
+                  + "             , VCONTENT"
+                  + "             , VSUBJECT"
+                  + "             , VURL"
+                  + "                , ADMINID) "
+                  + "values (VIDEO_SEQ.nextval, ?, ?, ?, ?, ?)";
       // VIDEO_SEQ.nextval
        
        Connection conn = null;
@@ -90,7 +90,7 @@ public class VideoDAO extends CommonDAO {
           stmt.setString(2, vVo.getvContent());
           stmt.setString(3, vVo.getvSubject()); // code string 확인
           stmt.setString(4, vVo.getvUrl());
-          stmt.setString(5, vVo.getadminId());
+          stmt.setString(5, vVo.getAdminId());
           
           stmt.executeUpdate();
           

@@ -1,8 +1,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	
-	
+   pageEncoding="UTF-8"%>
+   
+   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -26,7 +26,7 @@
 }
 </style>
 <div class="main-content" data-bg-img="/resources/images/main_img_1980.png">
-	
+   
     <!-- Section: inner-header -->
     <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="/resources/images/title.png">
         
@@ -39,7 +39,7 @@
                         <ol class="breadcrumb text-left text-black mt-10">
                             <li>
 <!-- 헤더부분 command -->  
-                          <a href="/AdminVideoServlet?command=adminVideoList">Home</a></li>
+                          <a href="/adminVideo?command=adminVideoList">Home</a></li>
                             <li class="active text-gray-silver">강의 자료</li>
                         </ol>
                     </div>
@@ -54,9 +54,9 @@
         <div class="container">
 
             <div class="row">
-				<div class="col-md-12">
-		            <h3 class="widget-title line-bottom">강의자료 게시판</h3>
-		            <hr>
+            <div class="col-md-12">
+                  <h3 class="widget-title line-bottom">강의자료 게시판</h3>
+                  <hr>
                 <div class="col-md-10 blog-pull-right">
                
                     <c:forEach items="${videoList}" var="VideoVO" varStatus="status">
@@ -64,7 +64,7 @@
                         
                             
 
-							<a href='read${pageMaker.makeSearch(pageMaker.cri.page) }&num=${VideoVO.vNum}'>
+                     <a href='read${pageMaker.makeSearch(pageMaker.cri.page) }&num=${VideoVO.vNum}'>
                             <div class="col-sm-6 col-md-7 blog-pull-right">
                                 <h3>
                                     ${VideoVO.vTitle} </h3>

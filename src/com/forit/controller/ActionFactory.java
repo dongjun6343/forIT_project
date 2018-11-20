@@ -8,10 +8,15 @@ import com.forit.action.AdminAssignRegisterAction;
 import com.forit.action.AdminAssignUpdateAction;
 import com.forit.action.AdminAssignUpdateFormAction;
 import com.forit.action.AdminAssignmentRegFormAction;
+import com.forit.action.AdminNoticeListAction;
+import com.forit.action.AdminNoticeRegFormAction;
+import com.forit.action.AdminNoticeRegisterAction;
+import com.forit.action.AdminVideoListAction;
+import com.forit.action.AdminVideoRegFormAction;
+import com.forit.action.AdminVideoRegisterAction;
 import com.forit.action.ClubIntroAction;
 import com.forit.action.LoginAction;
 import com.forit.action.MainAction;
-import com.forit.action.NoticeAction;
 import com.forit.action.VideoListAction;
 
 
@@ -56,7 +61,7 @@ public class ActionFactory {
 			action = new AdminAssignmentRegFormAction();
 			
 			//등록을 누르면 리스트보여줌
-		} 	else if (command.equals("adminaAssignRegEnd")){
+		} 	else if (command.equals("adminAssignRegister")){
 			
 			action = new AdminAssignRegisterAction();
 			//오늘의과제 상세보기
@@ -64,14 +69,13 @@ public class ActionFactory {
 			
 			action = new AdminAssignDetailAction();
 			//오늘의 과제 리스트
-		}	else if (command.equals("assignList")){
+		}	else if (command.equals("adminAssignList")){
 			
 			action = new AdminAssignListAction();
 			//오늘의 과제 수정 화면으로 이동 
 		}	else if (command.equals("adminAssignModifyForm")){
 			
-			action = new AdminAssignUpdateFormAction();
-		
+			action = new AdminAssignUpdateFormAction();		
 			//오늘의 과제 수정
 		}	else if (command.equals("adminAssignModify")){
 			
@@ -84,12 +88,47 @@ public class ActionFactory {
 		}	else if (command.equals("clubIntro")){
 			
 			action = new ClubIntroAction();
-			//공지사항
-		}	else if (command.equals("notice")){
 			
-			action = new NoticeAction();
+			
+			
+			
+			
+			
+			//공지사항 등록
+		}	else if (command.equals("adminNoticeRegister")){
+			
+			action = new AdminNoticeRegisterAction();
+			//공지사항 등록폼
+		}	else if (command.equals("adminNoticeRegForm")){
+				
+			action = new AdminNoticeRegFormAction();	
+			//공지사항 리스트
+		}	else if (command.equals("adminNoticeList")){
+				
+				action = new AdminNoticeListAction();
+			
+				
 		
-		}	
+				
+				
+			//관리자강의자료 등록
+		}	else if (command.equals("adminVideoRegister")){
+			
+			action = new AdminVideoRegisterAction();
+			
+			//강의자료리스트
+		}	else if (command.equals("adminVideoList")){
+			
+			action = new AdminVideoListAction();
+			//강의자료 등록폼
+		}   else if (command.equals("adminVideoRegForm")){
+			
+			action = new AdminVideoRegFormAction();	
+			
+		}
+		
+		
+		
 		
 		return action;
 	}
