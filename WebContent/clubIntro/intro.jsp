@@ -78,7 +78,7 @@ font-size : 12px;
 					<div class="section-content">
 						<div class="row mt-50">
 							<h4 class="text-theme-colored">
-								<b>조직도</b>
+								<b>조직쓰</b>
 							</h4>
 							<div class="video-popup">
 								<div class="col-md-1"></div>
