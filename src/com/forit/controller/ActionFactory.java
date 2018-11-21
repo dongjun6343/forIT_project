@@ -14,9 +14,12 @@ import com.forit.action.AdminNoticeRegFormAction;
 import com.forit.action.AdminNoticeRegisterAction;
 import com.forit.action.AdminNoticeUpdateAction;
 import com.forit.action.AdminNoticeUpdateFormAction;
+import com.forit.action.AdminVideoDetailAction;
 import com.forit.action.AdminVideoListAction;
 import com.forit.action.AdminVideoRegFormAction;
 import com.forit.action.AdminVideoRegisterAction;
+import com.forit.action.AdminVideoUpdateAction;
+import com.forit.action.AdminVideoUpdateFormAction;
 import com.forit.action.ClubIntroAction;
 import com.forit.action.LoginAction;
 import com.forit.action.MainAction;
@@ -138,6 +141,18 @@ public class ActionFactory {
 		}   else if (command.equals("adminVideoRegForm")){
 			
 			action = new AdminVideoRegFormAction();	
+			//강의자료 상세보기
+		}   else if (command.equals("adminVideoDetail")){
+			
+			action = new AdminVideoDetailAction();	
+			//강의자료 수정폼
+		}   else if (command.equals("adminVideoModifyForm")){
+			
+			action = new AdminVideoUpdateFormAction();	
+			//강의자료 수정
+		}   else if (command.equals("adminVideoModify")){
+			
+			action = new AdminVideoUpdateAction();	
 			
 		}
 		

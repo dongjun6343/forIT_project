@@ -66,8 +66,12 @@
 
                      <a href='read${pageMaker.makeSearch(pageMaker.cri.page) }&num=${VideoVO.vNum}'>
                             <div class="col-sm-6 col-md-7 blog-pull-right">
-                                <h3>
-                                    ${VideoVO.vTitle} </h3>
+                               
+                                <!-- 강의자료 제목  -->
+                                <h3><a href="/adminVideo?command=adminVideoDetail&vNum=${VideoVO.vNum}">${VideoVO.vTitle}</a>
+                                    </h3>
+                                    
+                                    
                                 <h4 class="line-bottom mt-0 mt-sm-20"></h4>
                                 <ul class="review_text list-inline">
                                     <li>
