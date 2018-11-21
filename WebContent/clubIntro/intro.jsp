@@ -59,7 +59,7 @@ font-size : 12px;
 								<p> 공부는 진정 원하는 것을 발견하고, 강한 내적 동기로 무장하여 공부 설계를 하고 공부 근육을 만드는 것이 중요합니다. 공부 근육은 개인의 공부 골격을 형성해주고 공부의 연속성을 만들어줍니다. 공부의 연속성을 만들기 위해서는 
 사소한 것부터 생활습관, 감정 근육, 신체 근육 등의 다방면의 훈련이 정교하게 훈련되어야 합니다.
 <br><br> </p>
-<p id="p">* 자바동아리는 공부 훈련을 위한  최고의  전문가가  공부훈련조교로 참여하여 학생들과 함께 공부역량을 정교하게 훈련시키는 것을 목적으로 합니다.</p>
+<p id="p">* 자바동아리는 공부 훈련을 위한  최고의  전문가가  공부훈련조교로 참여하여 학생들과 함께 공부역량을 정교하게 교육시키는 것을 목적으로 합니다.</p>
 								<!-- <a class="btn btn-dark mt-10" href="#">링크 바로가기 <i
 									class="fa fa-arrow-circle-right"></i></a> -->
 							</div>
@@ -99,7 +99,7 @@ font-size : 12px;
 		<div class="col-sm-2 mt-30">
             <div class="sidebar sidebar-left mt-sm-30">
                 <div class="widget">
-                    <h5 class="widget-title line-bottom"><a href="introGroup">동아리 소개</a></h5>
+                    <h5 class="widget-title line-bottom"><a href="clubServlet?command=clubIntro">동아리 소개</a></h5>
                     <div class="categories">
                         <ul class="list list-border angle-double-right">
                       <!--  <li><a href="/edugroup/intro">그룹소개</a></li>

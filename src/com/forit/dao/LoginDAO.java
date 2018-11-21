@@ -54,6 +54,9 @@ public class LoginDAO extends CommonDAO {
          //전달받은 id, pass DB 검색
          st.setString(1, aVo.getAdminId());
          st.setString(2, aVo.getAdminPw());
+         
+       System.out.println(aVo.getAdminId());
+       System.out.println(aVo.getAdminPw());
          rs = st.executeQuery(); // 쿼리문 실행
 
          if (rs.next()) {

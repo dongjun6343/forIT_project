@@ -1,17 +1,21 @@
 package com.forit.controller;
 
 import com.forit.action.Action;
+import com.forit.action.AdminAssignDeleteAction;
 import com.forit.action.AdminAssignDetailAction;
+import com.forit.action.AdminAssignListAction;
 import com.forit.action.AdminAssignRegisterAction;
+import com.forit.action.AdminAssignUpdateAction;
+import com.forit.action.AdminAssignUpdateFormAction;
 import com.forit.action.AdminAssignmentRegFormAction;
 import com.forit.action.ClubHistoryAction;
-import com.forit.action.AdminAssignListAction;
 import com.forit.action.ClubIntroAction;
 import com.forit.action.ClubPeopleAction;
 import com.forit.action.LoginAction;
 import com.forit.action.MainAction;
 import com.forit.action.NoticeAction;
 import com.forit.action.VideoListAction;
+
 
 /**
  * request로 받아온 매개변수의 command의 값으로 각 기능을 수행할 액션을 분기하는 클래스 <br>
@@ -36,61 +40,68 @@ public class ActionFactory {
 		Action action = null;
 
 		System.out.println("ActionFactory : " + command);
-
+		
 		if (command.equals("main")) {
 
 			action = new MainAction();
-			// 로그인을 눌렀을 때
-		} else if (command.equals("login")) {
-
+			//로그인을 눌렀을 때
+		}   else if (command.equals("login")){
+			
 			action = new LoginAction();
-
-		} else if (command.equals("videoList")) {
-
+			
+		} 	else if (command.equals("videoList")){
+			
 			action = new VideoListAction();
-		} // 등록누르고 register폼으로
-		else if (command.equals("adminAssignmentReg")) {
-
+		} 	//등록누르고 register폼으로
+			else if (command.equals("adminAssignmentReg")){
+			
 			action = new AdminAssignmentRegFormAction();
-
-			// 등록을 누르면 리스트보여줌
-		} else if (command.equals("adminaAssignRegEnd")) {
-
+			
+			//등록을 누르면 리스트보여줌
+		} 	else if (command.equals("adminaAssignRegEnd")){
+			
 			action = new AdminAssignRegisterAction();
-
-			// 오늘의과제 상세보기
-		} else if (command.equals("adminAssignDetail")) {
-
+			//오늘의과제 상세보기
+		}	else if (command.equals("adminAssignDetail")){
+			
 			action = new AdminAssignDetailAction();
-
-			// 오늘의 과제 리스트
-		} else if (command.equals("assignList")) {
-
+			//오늘의 과제 리스트
+		}	else if (command.equals("assignList")){
+			
 			action = new AdminAssignListAction();
-
-		}
-		// 공지사항
-		else if (command.equals("notice")) {
-
-			action = new NoticeAction();
-
-			// 동아리소개
-		} else if (command.equals("clubIntro")) {
-
+			//오늘의 과제 수정 화면으로 이동 
+		}	else if (command.equals("adminAssignModifyForm")){
+			
+			action = new AdminAssignUpdateFormAction();
+		
+			//오늘의 과제 수정
+		}	else if (command.equals("adminAssignModify")){
+			
+			action = new AdminAssignUpdateAction();
+		
+		}	else if (command.equals("adminAssignDelete")){
+			
+			action = new AdminAssignDeleteAction();
+		
+		}	else if (command.equals("clubIntro")){
+			
 			action = new ClubIntroAction();
-
-			// 연혁소개
-		} else if (command.equals("clubHistory")) {
-
+		
+		}	else if (command.equals("clubHistory")){
+			
 			action = new ClubHistoryAction();
-
-		}
-		// 목표소개
-		else if (command.equals("clubPeople")) {
-
+			
+		}	else if (command.equals("clubPeople")){
+			
 			action = new ClubPeopleAction();
-		}
-
+	
+			//공지사항
+		}	else if (command.equals("notice")){
+			
+			action = new NoticeAction();
+		
+		}	
+		
 		return action;
 	}
 

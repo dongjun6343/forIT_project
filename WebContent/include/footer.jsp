@@ -4,7 +4,7 @@
     <div class="container pt-40 pb-30">
       <div class="row">
         <div class="col-sm-6 col-md-3">
-          <div class="widget mb-20"> <img src="../resources/images/foritLogo2.PNG" alt="">
+          <div class="widget mb-20"> <img src="../resources/images/foritLogo-2.PNG" alt="">
           </div>
           <div class="widget dark">
           </div>

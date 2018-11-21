@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.forit.action.Action;
 
 /**
- * Servlet implementation class VideoSurvlet
+ * Servlet implementation class ClubServlet
  */
-@WebServlet("/videoServlet")
-public class VideoServlet extends HttpServlet {
+@WebServlet("/clubServlet")
+public class ClubServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public VideoServlet() {
+    public ClubServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,7 @@ public class VideoServlet extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String command = request.getParameter("command");
-        System.out.println("VideoServlet에서 요청을 받음을 확인 : + command");
+        System.out.println("ClubServlet에서 요청을 받음을 확인 : + command");
         ActionFactory af  = ActionFactory.getInstance();
         Action action = af.getAction(command);
         
@@ -37,12 +37,12 @@ public class VideoServlet extends HttpServlet {
            action.execute(request, response);
         }
      }
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("UTF-8");
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

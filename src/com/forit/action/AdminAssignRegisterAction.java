@@ -26,7 +26,7 @@ public class AdminAssignRegisterAction implements Action{
 //	      String assNum = request.getParameter("assignNum");
 	      String assTitle = request.getParameter("assignTitle");
 	      String assContent = request.getParameter("assignContent");
-	      String adminId = "admin";
+	      String adminId = request.getParameter("adminid");
 	      
 	   // Parameter 출력
 //	      System.out.println("assNum : " + assNum);
