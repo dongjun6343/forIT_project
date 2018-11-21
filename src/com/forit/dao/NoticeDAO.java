@@ -30,7 +30,7 @@ public class NoticeDAO extends CommonDAO {
 				+ "		   , NCONTENT"
 				+ "		   , NCOUNT"
 				+ "		   , NMUST"
-				+ "		   , ADMINID FROM NOTICE";
+				+ "		   , ADMINID FROM NOTICE ORDER BY NNUM DESC";
 
 		List<NoticeVO> list = new ArrayList<NoticeVO>();
 		Connection conn = null;
@@ -112,6 +112,7 @@ public class NoticeDAO extends CommonDAO {
 		}
 
 	}
+	//공지사항 수정
 	public void updateNotice(NoticeVO nVo){
 		String sql = "UPDATE NOTICE SET NTITEL=?,NCONTENT=? WHERE NNUM=?";
 		Connection conn = null;
@@ -134,13 +135,13 @@ public class NoticeDAO extends CommonDAO {
 	}
 	//공지사항상세보기 : 글 번호로 찾아온다 : 실패 null;
 	public NoticeVO selectOneNoticeByNum(String nNum){
-		String sql = "SELECT NNUM"
+		String sql = "SELECT NNUM "
 				+ "        , NTITLE"
 				+ "        , NDATE"
 				+ "		   , NCONTENT"
 				+ "		   , NCOUNT"
 				+ "		   , NMUST"
-				+ "		   , ADMINID FROM NOTICE where NNUM=?";
+				+ "		   , ADMINID FROM NOTICE where NNUM = ?";
 		
 		
 		NoticeVO nVo = null;
@@ -173,4 +174,22 @@ public class NoticeDAO extends CommonDAO {
 		}
 		return nVo;
 	}
+	//공지사항 조회수 올리기
+		public void updateReadCount(String nNum){
+			String sql = "update NOTICE set NCOUNT=NCOUNT+1 where NNUM=?";
+			
+			Connection conn = null;
+			PreparedStatement stmt = null;
+			try{
+				conn = getConnection();
+				stmt = conn.prepareStatement(sql);
+				stmt.setString(1, nNum);
+				stmt.executeQuery();
+				
+			}catch(SQLException e){
+				e.printStackTrace();
+			}finally{
+				 dbClose();
+			}
+		 }
 }

@@ -67,18 +67,17 @@
 
 
                      <div class="form-group input-short">
-                        <label for="exampleInputEmail1" class="col-sm-2 control-label">제목<span
+                        <label for="title" class="col-sm-2 control-label">제목<span
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 value값은 AdminNoitceUpdateAction과 동일-->
                         	<input type="hidden" name="nNum" value="${noticeVO.nNum}">
-                           <input type="text" name="nTitle" class="form-control"
-                             value="${noticeVO.nTitle}">
+                           <input type="text" name="nTitle" class="form-control" value="${noticeVO.nTitle}">
                         </div>
                      </div>
 
                      <div class="form-group input-short">
-                        <label for="exampleInputEmail1" class="col-sm-2 control-label">내용<span
+                        <label for="content" class="col-sm-2 control-label">내용<span
                            class="must-mark"></span></label>
                          <div class="col-sm-10"> 
                            <input type="text" name="nContent" class="form-control"
@@ -87,13 +86,10 @@
                      </div>
                      
                     <div class="form-group input-short">
-                        <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
+                        <label for="admin" class="col-sm-2 control-label">작성자<span
                            class="must-mark"></span></label>
                        <!--  <div class="col-sm-10"> -->
                          <input type ="hidden" name = "adminId" value="admin" readonly="readonly">
-                        <%--    <input type="text" name="adminId" class="form-control"
-                             value="${AssignmentVO.adminId}" > <span id="assContent"></span>
-                        </div> --%>
                      </div>
                      
                      
@@ -103,7 +99,7 @@
 
                      <div class="box-footer btn-group-center">
                         <button type="button" class="btn btn-cancel">취소</button>
-                        <button type="submit" class="btn btn-primary" id="submitbutton">등록</button>
+                        <button type="submit" class="btn btn-primary" id="submitbutton">수정</button>
                      </div>
                   </div>
                </div>

@@ -23,7 +23,7 @@ public class AdminNoticeUpdateFormAction implements Action{
 		
 		NoticeDAO nDao = NoticeDAO.getInstance();
 		
-//		nDao.updateReadCount(nNum); 조회수올리기
+		nDao.updateReadCount(nNum);
 		NoticeVO nVo = nDao.selectOneNoticeByNum(nNum); //상세보기
 		
 		request.setAttribute("noiceVO", nVo);

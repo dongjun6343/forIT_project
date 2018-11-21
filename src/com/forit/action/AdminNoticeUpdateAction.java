@@ -19,18 +19,18 @@ public class AdminNoticeUpdateAction implements Action {
 
 		
 		String nNum = request.getParameter("nNum");
-		System.out.println("nNumUpdate ==> " + nNum);
 		String nTitle = request.getParameter("nTitle");
 		String nContent = request.getParameter("nContent");
-		String adminId = request.getParameter("adminId");
+		String adminId = request.getParameter("adminid");
 
+        
 		//객체 셋팅
 		nVo.setnNum(Integer.parseInt(nNum));
+		System.out.println("nUpdate ==> " + nNum);
 		nVo.setnTitle(nTitle);
 		nVo.setnContent(nContent);
 		nVo.setAdminId(adminId);
-		
-		
+				
 		
 		request.setAttribute("noticeVO", nVo);
 

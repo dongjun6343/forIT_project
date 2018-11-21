@@ -104,14 +104,22 @@
                            <div class="col-sm-10">
                               <input type="text" name="vUrl" class="form-control"value="${videoVO.vUrl}"> 
                               <span id="vUrl"></span>
-                           </div>
+                           </div>    
                         </div>
-
+							<div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
+                           class="must-mark"></span></label>
+                       <!--  <div class="col-sm-10"> -->
+                         <input type ="hidden" name = "adminid" value="admin" readonly="readonly">
+                        <%--    <input type="text" name="adminId" class="form-control"
+                             value="${AssignmentVO.adminId}" > <span id="assContent"></span>
+                        </div> --%>
+                     </div>
 
 
                         <div class="box-footer btn-group-center">
                            <button type="button" class="btn btn-cancel">취소</button>
-                           <button type="submit" class="btn btn-primary" id="submitbutton">등록</button>
+                           <button type="submit" class="btn btn-primary" id="submitbutton">수정</button>
                         </div>
                      </div>
                   </div>
@@ -136,7 +144,7 @@
 
 <!-- 페이지이동 스트립트 -->
 
-<script>
+<!-- <script>
    $(document).ready(
          function() {
 
@@ -159,7 +167,7 @@
             });
 
          });
-</script>
+</script> -->
 <!-- 검색버튼, 등록버튼 스크립트 -->
 
 

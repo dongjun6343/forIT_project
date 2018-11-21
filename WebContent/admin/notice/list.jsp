@@ -422,6 +422,14 @@ strong {
             </div>
 
             <div class="row">
+            <div class="col-md-2 mt-5 pull-right" >
+							
+				<button id='registerBtn' type="submit" class="btn btn-default" onclick="location.href='/admin/notice/register.jsp'">
+							
+							<i class="fa fa-pencil" >등록</i> 
+						</button>	
+		
+					</div>
                <div class="col-sm-5">
                   <div class="col-sm-5">
                      <select class="form-control" name="listType" id="listType">
@@ -459,6 +467,7 @@ strong {
                         value='${cri.keyword }' class="form-control"
                         placeholder="키워드를 입력하세요">
                   </div>
+                  
                   <div class="col-sm-2 mt-5">
                      <div class="btn-group-custom">
                         <button type="submit" class="btn btn-default" id="searchBtn">

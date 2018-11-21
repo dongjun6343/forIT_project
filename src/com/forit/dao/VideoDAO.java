@@ -30,7 +30,7 @@ public class VideoDAO extends CommonDAO {
                   + "      , VURL"
                   + "      , VCOUNT"
                   + "      , ADMINID "
-                  + "  FROM VIDEO";
+                  + "  FROM VIDEO ORDER BY VNUM DESC";
          
          List<VideoVO> list = new ArrayList<VideoVO>();
          Connection conn = null;
@@ -128,6 +128,7 @@ public class VideoDAO extends CommonDAO {
  			
  			if(rs.next()){
  				vVo = new VideoVO();
+ 				
  				vVo.setvNum(rs.getInt("vNum"));
                 vVo.setvTitle(rs.getString("vTitle"));
                 vVo.setvDate(rs.getTimestamp("vDate"));
