@@ -158,7 +158,7 @@
                 	 <h3 class="text-uppercase text-theme-colored font line-bottom line-height-1 mt-0 mb-0">목표
                 	 	<span class="text-theme-color-2 font-weight-400">OBJECTIVE</span></h3>
           </div>
-        </div>
+        </div> 
        
       </div>
             
