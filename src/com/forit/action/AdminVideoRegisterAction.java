@@ -15,10 +15,8 @@ public class AdminVideoRegisterAction implements Action{
    @Override
    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       // TODO Auto-generated method stub
-
-	   	String url = "/admin/video/list.jsp";
-         
-	   	 System.out.println("강의자료 등록 액션 진입");
+ 
+          System.out.println("강의자료 등록 액션 진입");
          // StudentVO 객체 생성
          VideoVO vVo = new VideoVO();
          
@@ -29,29 +27,19 @@ public class AdminVideoRegisterAction implements Action{
          String vUrl = request.getParameter("vUrl");
          String adminId = "admin";
          
-      // Parameter 출력
-//         System.out.println("vNum : " + vNum);
-        
-         
          // 객체 세팅
          vVo.setvTitle(vTitle);
          vVo.setvContent(vContent);
          vVo.setvSubject(vSubject);
          vVo.setvUrl(vUrl);
-         vVo.setadminID(adminId);
-         
-         
-         System.out.println(vVo);
+         vVo.setAdminID(adminId);
          
          VideoDAO vDao = VideoDAO.getInstance();
          
          vDao.insertVideo(vVo);
+         
+         new AdminVideoListAction().execute(request, response);
 
-      
-         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-         dispatcher.forward(request, response);
-         
-         
          
       }
    }

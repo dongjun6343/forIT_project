@@ -1,8 +1,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	
-	
+   pageEncoding="UTF-8"%>
+   
+   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -26,7 +26,7 @@
 }
 </style>
 <div class="main-content" data-bg-img="/resources/images/main_img_1980.png">
-	
+   
     <!-- Section: inner-header -->
     <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="/resources/images/title.png">
         
@@ -37,7 +37,9 @@
                     <div class="col-md-12">
                         <h2 class="title text-white">강의 자료</h2>
                         <ol class="breadcrumb text-left text-black mt-10">
-                            <li><a href="#">Home</a></li>
+                            <li>
+<!-- 헤더부분 command -->  
+                          <a href="/adminVideo?command=adminVideoList">Home</a></li>
                             <li class="active text-gray-silver">강의 자료</li>
                         </ol>
                     </div>
@@ -47,41 +49,45 @@
     </section>
     <!-- The archive: C:/Program Files/Java/jdk1.8.0_161/lib/tools.jar which is referenced by the classpath, does not exist. -->
     <!-- Section: Course list -->
-    <section class="layer-overlay overlay-dark-9">
+    <section class="container">
 
-        <div class="container layer-overlay overlay-dark-9">
+        <div class="container">
 
             <div class="row">
-				<div class="col-md-12">
-		            <h3 class="widget-title line-bottom">강의자료 게시판</h3>
-		            <hr>
+            <div class="col-md-12">
+                  <h3 class="widget-title line-bottom">강의자료 게시판</h3>
+                  <hr>
                 <div class="col-md-10 blog-pull-right">
-
-                    <c:forEach items="${videoList}" var="videoVO" varStatus="status">
+               
+                    <c:forEach items="${videoList}" var="VideoVO" varStatus="status">
                         <div class="row mb-15 ">
                         
                             
 
-							<a href='read${pageMaker.makeSearch(pageMaker.cri.page) }&num=${videoVO.vNum}'>
+                     <a href='read${pageMaker.makeSearch(pageMaker.cri.page) }&num=${VideoVO.vNum}'>
                             <div class="col-sm-6 col-md-7 blog-pull-right">
-                                <h3>
-                                    ${videoVO.vTitle} </h3>
+                               
+                                <!-- 강의자료 제목  -->
+                                <h3><a href="/adminVideo?command=adminVideoDetail&vNum=${VideoVO.vNum}">${VideoVO.vTitle}</a>
+                                    </h3>
+                                    
+                                    
                                 <h4 class="line-bottom mt-0 mt-sm-20"></h4>
                                 <ul class="review_text list-inline">
                                     <li>
                                         <h9 class="mt-0"> <span class="text-theme-color-2">게시일 : </span>
                                             <fmt:formatDate pattern="yyyy-MM-dd"
-                                                value="${videoVO.vDate}" />
+                                                value="${VideoVO.vDate}" />
                                         </h9>
                                     </li>
                                     <li>
                                         <div class="" title="vCount">
-                                            <span class="text-theme-color-2">조회수 : </span> <span>${videoVO.vCount }회</span>
+                                            <span class="text-theme-color-2">조회수 : </span> <span>${VideoVO.vCount}회</span>
                                         </div>
                                     </li>
                                 </ul>
                                 <!-- 리스트에 보이는 내용 subStr 100까지-->
-                                <p class="listcontent" style="margin-right: 30%;">${videoVO.vContent}</p>
+                                <p class="listcontent" style="margin-right: 30%;">${VideoVO.vContent}</p>
                             </div>
                             </a>
                             
@@ -115,6 +121,7 @@
                                     <li><a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
                                 </c:if>
                             </ul>
+                            
                         </div>
                         <!-- .text-center END -->
                     </div>

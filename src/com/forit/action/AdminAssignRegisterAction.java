@@ -22,7 +22,7 @@ public class AdminAssignRegisterAction implements Action{
 	      AssignmentVO aVo = new AssignmentVO();
 	      
 	      //파라미터의 이름과 id는 같아야한다. register.jsp
-	      request.setCharacterEncoding("UTF-8");
+//	      request.setCharacterEncoding("UTF-8");
 //	      String assNum = request.getParameter("assignNum");
 	      String assTitle = request.getParameter("assignTitle");
 	      String assContent = request.getParameter("assignContent");
@@ -42,14 +42,12 @@ public class AdminAssignRegisterAction implements Action{
 	      
 	      aDao.insertAssignment(aVo);
 
-		
+		  request.setAttribute("msg", "글을 작성했습니다");
 //			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 //			dispatcher.forward(request, response);
 	      
 	      //AssignListAction불러오기(List에 디비가 담겨있음)
 	      new AdminAssignListAction().execute(request, response);
-	      
-	      
 		}
 	}
 	

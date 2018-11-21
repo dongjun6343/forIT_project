@@ -21,16 +21,17 @@ public class AdminVideoListAction implements Action{
       VideoDAO vDao = VideoDAO.getInstance();
       
       List<VideoVO> videoList = vDao.selectAllVideos();
+      /*List<VideoVO> videoList = new ArrayList<VideoVO>();*/
+      /*videoList =    vDao.selectAllVideos();*/
       
       request.setAttribute("videoList", videoList);
       
       System.out.println(videoList);
       
-      
-      
       RequestDispatcher dispatcher = request.getRequestDispatcher(url);//url을 찍어줘야됨
       dispatcher.forward(request, response);
+      
+      
    }
    
 }
-

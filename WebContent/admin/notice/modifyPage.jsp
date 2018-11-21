@@ -1,4 +1,4 @@
-<!-- 수정하기를 눌렀을 때! -->
+<!--공지사항 수정하기를 눌렀을 때! -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
@@ -19,7 +19,7 @@
          <div class="section-content">
             <div class="row">
                <div class="col-md-12">
-                  <h2 class="title text-white">오늘의과제 수정</h2>
+                  <h2 class="title text-white">공지사항 수정</h2>
                   <ol class="breadcrumb text-left text-white">
                      <li><a href="/">&nbsp;</a></li>
                   </ol>
@@ -36,7 +36,7 @@
     -->
 
    <form role="form" method="post" class="form-horizontal"
-      action="/adminAssign?command=adminAssignModify">
+      action="/adminNotice?command=adminNoticeModify">
       <input type="hidden" name="validation">
       <div class="box-body box-form-custom">
          <div class="form-group input-short">
@@ -46,7 +46,7 @@
                   <div class="sidebar sidebar-left mt-sm-30">
                      <div class="widget">
                         <h5 class="widget-title line-bottom">
-                        <a href="assignment">오늘의 과제 수정</a>
+                        <a href="notice">공지사항 수정</a>
                         </h5>
                      <div class="categories">
                         <ul class="list list-border angle-double-right">
@@ -67,43 +67,29 @@
 
 
                      <div class="form-group input-short">
-                        <label for="exampleInputEmail1" class="col-sm-2 control-label">제목<span
+                        <label for="title" class="col-sm-2 control-label">제목<span
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
-                        <!-- input type의 name중요시 -->
-                           <input type="text" name="assTitle" class="form-control"
-                             value="${AssignmentVO.assTitle} ${AssignmentVO.assNum}">
-=======
-                        <!-- input type의 hidden으로 assNum을 숨긴후  -->
-                        	<input type="hidden" name="assNum" value="${AssignmentVO.assNum}">
-                           <input type="text" name="assTitle" class="form-control"
-                             value="${AssignmentVO.assTitle}">
->>>>>>> branch 'master' of https://github.com/dongjun6343/forIT_project.git
+                        <!-- input type의 name중요시 value값은 AdminNoitceUpdateAction과 동일-->
+                        	<input type="hidden" name="nNum" value="${noticeVO.nNum}">
+                           <input type="text" name="nTitle" class="form-control" value="${noticeVO.nTitle}">
                         </div>
                      </div>
 
                      <div class="form-group input-short">
-                        <label for="exampleInputEmail1" class="col-sm-2 control-label">내용<span
+                        <label for="content" class="col-sm-2 control-label">내용<span
                            class="must-mark"></span></label>
                          <div class="col-sm-10"> 
-                           <input type="text" name="assContent" class="form-control"
-                             value="${AssignmentVO.assContent}"> <span id="assContent"></span>
+                           <input type="text" name="nContent" class="form-control"
+                             value="${noticeVO.nContent}"> <span id="nContent"></span>
                         </div>
                      </div>
                      
                     <div class="form-group input-short">
-                        <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
+                        <label for="admin" class="col-sm-2 control-label">작성자<span
                            class="must-mark"></span></label>
                        <!--  <div class="col-sm-10"> -->
-<<<<<<< HEAD
-                         <input type ="hidden" name = "adminid" value="admin" readonly="readonly">
-=======
                          <input type ="hidden" name = "adminId" value="admin" readonly="readonly">
->>>>>>> branch 'master' of https://github.com/dongjun6343/forIT_project.git
-                        <%--    <input type="text" name="adminId" class="form-control"
-                             value="${AssignmentVO.adminId}" > <span id="assContent"></span>
-                        </div> --%>
                      </div>
                      
                      
@@ -135,46 +121,12 @@
    }
 </script>
 <!-- 스크립트 메세지 -->
-
-<!-- 페이지이동 스트립트 -->
-
-<!-- <script>
-   $(document).ready(
-         function() {
-
-            $('#searchBtn').on(
-                  "click",
-                  function(event) {
-
-                     self.location = "/admin/assignment/modifyPage.jsp"
-                           + '${pageMaker.makeQuery(1)}'
-                           + "&searchType="
-                           + $("#searchType option:selected").val()
-                           + "&keyword=" + $('#keywordInput').val();
-
-                  });
-
-            $('#newBtn').on("click", function(evt) {
-
-               self.location = "/admin/assignment/list.jsp";
-
-            });
-
-         });
-</script> -->
-<!-- 검색버튼, 등록버튼 스크립트 -->
-
-
-
 <form>
    <!--  id="jobForm"  -->
    <input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
    <input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>
 
 </form>
-
-
-
 
 
 

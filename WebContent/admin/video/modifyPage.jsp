@@ -44,7 +44,7 @@
                   <div class="sidebar sidebar-left mt-sm-30">
                      <div class="widget">
                         <h5 class="widget-title line-bottom">
-                           <a href="introGroup">강의자료 등록</a>
+                           <a href="introGroup">강의자료 수정</a>
                         </h5>
                         <div class="categories">
                            <ul class="list list-border angle-double-right">
@@ -68,8 +68,9 @@
                            class="must-mark">*</span></label>
                         <div class="col-sm-10">
                            <!-- input type의 name중요시 -->
+                           <input type="hidden" name="vNum" value="${videoVO.vNum}">
                            <input type="text" name="vTitle" class="form-control"
-                              placeholder="제목을 입력해주세요">
+                             value="${videoVO.vTitle}">
                         </div>
                      </div>
                      <div class="form-group input-double">
@@ -79,10 +80,10 @@
                         <div class="col-sm-4">
                            <select id="vSubject" name="vSubject" class="form-control">
                                  <option value="">선택</option>
-                                 <option value="JAVA">Java</option>
-                                 <option value="JSP">JSP</option>
-                                 <option value="DB">DB</option>
-                                 <option value="ETC">기타</option>
+                                 <option value="${videoVO.vSubject}">Java</option>
+                                 <option value="${videoVO.vSubject}">JSP</option>
+                                 <option value="${videoVO.vSubject}">DB</option>
+                                 <option value="${videoVO.vSubject}">기타</option>
                            </select>
 
                         </div>
@@ -93,7 +94,7 @@
                               class="must-mark">*</span></label>
                            <div class="col-sm-10">
                               <input type="text" name="vContent" class="form-control"
-                                 placeholder="내용을 입력해주세요"> <span id="vContent"></span>
+                                value="${videoVO.vContent}"> <span id="vContent"></span>
                            </div>
                         </div>
 
@@ -101,16 +102,24 @@
                            <label for="exampleInputEmail1" class="col-sm-2 control-label">URL<span
                               class="must-mark">*</span></label>
                            <div class="col-sm-10">
-                              <input type="text" name="vUrl" class="form-control"
-                                 placeholder="URL을 입력해주세요"> <span id="vUrl"></span>
-                           </div>
+                              <input type="text" name="vUrl" class="form-control"value="${videoVO.vUrl}"> 
+                              <span id="vUrl"></span>
+                           </div>    
                         </div>
-
+							<div class="form-group input-short">
+                        <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
+                           class="must-mark"></span></label>
+                       <!--  <div class="col-sm-10"> -->
+                         <input type ="hidden" name = "adminid" value="admin" readonly="readonly">
+                        <%--    <input type="text" name="adminId" class="form-control"
+                             value="${AssignmentVO.adminId}" > <span id="assContent"></span>
+                        </div> --%>
+                     </div>
 
 
                         <div class="box-footer btn-group-center">
                            <button type="button" class="btn btn-cancel">취소</button>
-                           <button type="submit" class="btn btn-primary" id="submitbutton">등록</button>
+                           <button type="submit" class="btn btn-primary" id="submitbutton">수정</button>
                         </div>
                      </div>
                   </div>
@@ -135,7 +144,7 @@
 
 <!-- 페이지이동 스트립트 -->
 
-<script>
+<!-- <script>
    $(document).ready(
          function() {
 
@@ -158,7 +167,7 @@
             });
 
          });
-</script>
+</script> -->
 <!-- 검색버튼, 등록버튼 스크립트 -->
 
 
