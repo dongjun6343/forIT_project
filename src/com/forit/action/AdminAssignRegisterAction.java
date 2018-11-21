@@ -22,7 +22,7 @@ public class AdminAssignRegisterAction implements Action{
 	      AssignmentVO aVo = new AssignmentVO();
 	      
 	      //파라미터의 이름과 id는 같아야한다. register.jsp
-	      request.setCharacterEncoding("UTF-8");
+//	      request.setCharacterEncoding("UTF-8");
 //	      String assNum = request.getParameter("assignNum");
 	      String assTitle = request.getParameter("assignTitle");
 	      String assContent = request.getParameter("assignContent");

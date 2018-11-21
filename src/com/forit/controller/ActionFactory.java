@@ -8,9 +8,12 @@ import com.forit.action.AdminAssignRegisterAction;
 import com.forit.action.AdminAssignUpdateAction;
 import com.forit.action.AdminAssignUpdateFormAction;
 import com.forit.action.AdminAssignmentRegFormAction;
+import com.forit.action.AdminNoticeDetailAction;
 import com.forit.action.AdminNoticeListAction;
 import com.forit.action.AdminNoticeRegFormAction;
 import com.forit.action.AdminNoticeRegisterAction;
+import com.forit.action.AdminNoticeUpdateAction;
+import com.forit.action.AdminNoticeUpdateFormAction;
 import com.forit.action.AdminVideoListAction;
 import com.forit.action.AdminVideoRegFormAction;
 import com.forit.action.AdminVideoRegisterAction;
@@ -105,8 +108,19 @@ public class ActionFactory {
 			//공지사항 리스트
 		}	else if (command.equals("adminNoticeList")){
 				
-				action = new AdminNoticeListAction();
+			action = new AdminNoticeListAction();
+			//공지사항 수정폼으로 이동	
+		}	else if (command.equals("adminNoticeModifyForm")){
 			
+			action = new AdminNoticeUpdateFormAction();		
+			//공지사항 과제 수정
+		}	else if (command.equals("adminNoticeModify")){
+					
+			action = new AdminNoticeUpdateAction();
+			//공지사항 상세보기
+		}	else if (command.equals("adminNoticeDetail")){
+				
+			action = new AdminNoticeDetailAction();		
 				
 		
 				

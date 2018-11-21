@@ -20,6 +20,9 @@ public class AdminAssignDeleteAction implements Action{
 		AssignmentDAO aDao = AssignmentDAO.getInstance();
 		aDao.deleteAssignment(assNum);
 		
+		System.out.println("assigndeleteNum : " + assNum);
+	      
+		
 		new AdminAssignListAction().execute(request, response);
 	}
 

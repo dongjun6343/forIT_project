@@ -21,7 +21,7 @@ public class NoticeDAO extends CommonDAO {
 		return instance;
 	}
 
-	// 등록 조회
+	// 조회
 	public List<NoticeVO> selectAllNotices() {
 
 		String sql = "SELECT NNUM"
@@ -112,5 +112,65 @@ public class NoticeDAO extends CommonDAO {
 		}
 
 	}
-
+	public void updateNotice(NoticeVO nVo){
+		String sql = "UPDATE NOTICE SET NTITEL=?,NCONTENT=? WHERE NNUM=?";
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try{
+			conn = getConnection();
+			stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, nVo.getnTitle());
+			stmt.setString(2, nVo.getnContent());
+			stmt.setInt(3, nVo.getnNum());
+			
+			stmt.executeUpdate();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			dbClose();
+		}
+	}
+	//공지사항상세보기 : 글 번호로 찾아온다 : 실패 null;
+	public NoticeVO selectOneNoticeByNum(String nNum){
+		String sql = "SELECT NNUM"
+				+ "        , NTITLE"
+				+ "        , NDATE"
+				+ "		   , NCONTENT"
+				+ "		   , NCOUNT"
+				+ "		   , NMUST"
+				+ "		   , ADMINID FROM NOTICE where NNUM=?";
+		
+		
+		NoticeVO nVo = null;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+	
+		try{
+			conn = getConnection();
+			stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, nNum);
+			
+			rs = stmt.executeQuery();
+			
+			if(rs.next()){
+				nVo = new NoticeVO();
+				
+				nVo.setnNum(rs.getInt("nNum"));
+				nVo.setnTitle(rs.getString("nTitle"));
+				nVo.setnDate(rs.getTimestamp("nDate"));
+				nVo.setnContent(rs.getString("nContent"));
+				nVo.setnCount(rs.getInt("nCount"));
+				nVo.setnMust(rs.getString("nMust").charAt(0)); // string 형식을 char형으로 형변환
+				nVo.setAdminId(rs.getString("adminId"));
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return nVo;
+	}
 }

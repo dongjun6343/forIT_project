@@ -220,13 +220,14 @@ public class AssignmentDAO extends CommonDAO {
 	
 	//게시글 삭제하기.
 	public void deleteAssignment(String assNum){
-		String sql = "DELETE ASSIGNMENT WHERE ASSNUM=?";
+		String sql = "delete ASSIGNMENT WHERE ASSNUM=?";
 		
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		try{
 			conn = getConnection();
 			stmt = conn.prepareStatement(sql);
+			
 			stmt.setString(1, assNum);
 			
 		}catch(SQLException e){

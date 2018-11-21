@@ -17,7 +17,7 @@
          <div class="section-content">
             <div class="row">
                <div class="col-md-12">
-                  <h2 class="title text-white">공지사항 등록</h2>
+                  <h2 class="title text-white">공지사항 상세보기</h2>
                   <ol class="breadcrumb text-left text-white">
                      <li><a href="/">&nbsp;</a></li>
                   </ol>
@@ -59,7 +59,7 @@
                   <div class="row">
                      <div style="height: 50px;">
                         <h4 class="line-bottom mt-20 mb-20 text-theme-colored">공지사항
-                           등록</h4>
+                           상세보기</h4>
                      </div>
 
 
@@ -69,8 +69,8 @@
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
                         <!-- input type의 name중요시 -->
-                           <input type="text" name="assignTitle" class="form-control"
-                             value="${AssignmentVO.assTitle}" readonly="readonly">
+                           <input type="text" name="nTitle" class="form-control"
+                             value="${noticeVO.nTitle}" readonly="readonly">
                         </div>
                      </div>
 
@@ -78,8 +78,8 @@
                         <label for="exampleInputEmail1" class="col-sm-2 control-label">내용<span
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
-                           <input type="text" name="assignContent" class="form-control"
-                             value="${AssignmentVO.assContent}" readonly="readonly"> <span id="assContent"></span>
+                           <input type="text" name="nContent" class="form-control"
+                             value="${noticeVO.nContent}" readonly="readonly"> <span id="nContent"></span>
                         </div>
                      </div>
                      
@@ -88,7 +88,7 @@
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
                            <input type="text" name="adminId" class="form-control"
-                             value="${AssignmentVO.adminId}" readonly="readonly"> <span id="assContent"></span>
+                             value="${noticeVO.adminId}" readonly="readonly"> <span id="nContent"></span>
                         </div>
                      </div>
                      
@@ -100,17 +100,17 @@
 <div class="box-footer btn-group-center">
                    
                        <button id='modifyBtn' type="button" class="btn btn-default" 
-					onclick="location.href='/adminAssign?command=adminAssignModifyForm&assNum=${AssignmentVO.assNum}'">
+					onclick="location.href='/adminNotice?command=adminNoticeModifyForm&nNum=${noticeVO.nNum}'">
 							<i class="fas fa-clipboard-list">수정</i>
 						</button>	  
                         
-                        <button id='deleteBtn' type="button" class="btn btn-default" 
+                <%--         <button id='deleteBtn' type="button" class="btn btn-default" 
 					onclick="location.href='/adminAssign?command=adminAssignDelete&assNum=${AssignmentVO.assNum}'">
 							<i class="fas fa-trash-alt">삭제</i>
 						</button>
-                       
+                 --%>       
 					<button id='listBtn' type="button" class="btn btn-default" 
-					onclick="location.href='/adminAssign?command=adminAssignList'">
+					onclick="location.href='/adminNotice?command=adminNoticeList'">
 							<i class="fas fa-clipboard-list">글목록</i>
 						</button>
                   </div>

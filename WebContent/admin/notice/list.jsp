@@ -162,14 +162,14 @@ strong {
                               </tr>
                            </thead>
 							
-							<!-- noticeList가 잘못. -->
+							
                            <c:forEach items="${noticeList}" var="NoticeVO">
 
                               <tr>
                                  <!-- NoticeVO에 있는 변수랑 같아야함! -->
                                  <td>${NoticeVO.nNum}</td>
                                  <!-- title를 눌렀을 때 상세보기 페이지로 이동 -->
-                                 <td>${NoticeVO.nTitle}</a></td>
+                                 <td><a href="/adminNotice?command=adminNoticeDetail&nNum=${NoticeVO.nNum}">${NoticeVO.nTitle}</a></td>
                                  <td>${NoticeVO.adminId}</td>
                                  <td>${NoticeVO.nDate}</td>
                                  <td>${NoticeVO.nCount}</td>
@@ -179,6 +179,7 @@ strong {
 
                         </table>
                      </div>
+                    
                      <c:forEach items="${topList}" var="noticeVO" varStatus="status">
                         <div class="panel panel-primary">
                            <div class="panel-title">
@@ -489,6 +490,7 @@ strong {
          </div>
       </div>
    </section>
+   
    <!-- /.main-content -->
 </div>
 <script type="text/javascript" src="/resources/admin/validity/notice.js"></script>
