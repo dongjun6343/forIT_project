@@ -8,7 +8,7 @@
           </div>
           <div class="widget dark">
           </div>
-        </div>
+        </div> 
         <div class="col-sm-6 col-md-8">
           <div class="widget dark">
             <div class="opening-hours">

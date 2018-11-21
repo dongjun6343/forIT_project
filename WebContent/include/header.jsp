@@ -183,10 +183,10 @@
                           </form>
                         </div>
                       </li>
-                    </ul>
+                    </ul> 
                   </div>
                 </li>
-              </ul>
+              </ul> 
             </div>
             <div class="widget no-border m-0 mr-15 pull-right flip sm-pull-none sm-text-center">
               <ul class="styled-icons icon-circled icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
