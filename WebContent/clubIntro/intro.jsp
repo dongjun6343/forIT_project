@@ -61,12 +61,12 @@ font-size : 12px;
 <br><br> </p>
 <p id="p">* 자바동아리는 공부 훈련을 위한  최고의  전문가가  공부훈련조교로 참여하여 학생들과 함께 공부역량을 정교하게 교육시키는 것을 목적으로 합니다.</p>
 								<!-- <a class="btn btn-dark mt-10" href="#">링크 바로가기 <i
-									class="fa fa-arrow-circle-right"></i></a> --> 
+									class="fa fa-arrow-circle-right"></i></a> -->
 							</div>
 							<div class="col-md-6">
 								<div class="video-popup">
 									<a title="SD교육 그룹">
-										 <img alt="" src="../resources/images/javagroup.PNG"
+										 <img alt="" src="../resources/images/edugroup-png/clubimage.png"
 										class="img-responsive img-fullwidth">
 									</a>
 								</div>
@@ -83,7 +83,7 @@ font-size : 12px;
 							<div class="video-popup">
 								<div class="col-md-1"></div>
 								<div class="col-md-10">
-									<img alt="" src="/resources/images/edugroup-png/organizationchart.PNG"
+									<img alt="" src="/resources/images/javagroup.PNG"
 										class="img-responsive img-fullwidth mt-30">
 									
 								</div>
