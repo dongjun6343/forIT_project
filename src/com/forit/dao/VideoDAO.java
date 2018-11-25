@@ -143,6 +143,8 @@ public class VideoDAO extends CommonDAO {
        }
        return vVo;
     }
+    
+    
     //비디오 수정
    public void updateVideo(VideoVO vVo){
       String sql = "UPDATE VIDEO SET VTITLE=?,VCONTENT=?,VSUBJECT=?,VURL=? WHERE VNUM=?";
@@ -166,7 +168,27 @@ public class VideoDAO extends CommonDAO {
          dbClose();
       }
    }
-   //강의자료 조회수올리기
+   //강의자료 삭제
+   public void deleteVideo(String vNum){
+      String sql = "delete VIDEO WHERE VNUM=?";
+      
+      Connection conn = null;
+      PreparedStatement stmt = null;
+      try{
+         conn = getConnection();
+         stmt = conn.prepareStatement(sql);
+         
+         stmt.setString(1, vNum);
+         //excuteQuery
+         stmt.executeQuery();
+         
+      }catch(SQLException e){
+         e.printStackTrace();
+      }
+   
+   }
+   
+   //강의자료 조회수 올리기 기능
    public void updateReadCount(String vNum){
       String sql = "update VIDEO set VCOUNT=VCOUNT+1 where VNUM=?";
       
