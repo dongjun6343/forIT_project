@@ -70,17 +70,13 @@
                         <label for="exampleInputEmail1" class="col-sm-2 control-label">제목<span
                            class="must-mark"></span></label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
+
                         <!-- input type의 name중요시 -->
                            <input type="text" name="assTitle" class="form-control"
                              value="${AssignmentVO.assTitle} ${AssignmentVO.assNum}">
-=======
                         <!-- input type의 hidden으로 assNum을 숨긴후  -->
                         	<input type="hidden" name="assNum" value="${AssignmentVO.assNum}">
-                           <input type="text" name="assTitle" class="form-control"
-                             value="${AssignmentVO.assTitle}">
->>>>>>> branch 'master' of https://github.com/dongjun6343/forIT_project.git
-                        </div>
+                           
                      </div>
 
                      <div class="form-group input-short">
@@ -96,11 +92,10 @@
                         <label for="exampleInputEmail1" class="col-sm-2 control-label">작성자<span
                            class="must-mark"></span></label>
                        <!--  <div class="col-sm-10"> -->
-<<<<<<< HEAD
+
                          <input type ="hidden" name = "adminid" value="admin" readonly="readonly">
-=======
-                         <input type ="hidden" name = "adminId" value="admin" readonly="readonly">
->>>>>>> branch 'master' of https://github.com/dongjun6343/forIT_project.git
+
+                        
                         <%--    <input type="text" name="adminId" class="form-control"
                              value="${AssignmentVO.adminId}" > <span id="assContent"></span>
                         </div> --%>

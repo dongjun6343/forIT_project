@@ -331,7 +331,7 @@
                   data-splitout="none" 
                   data-responsive_offset="on"
                   style="z-index: 5; white-space: nowrap; letter-spacing:1px;">
-                 <a class="btn btn-colored btn-lg btn-flat btn-theme-colored btn-theme-colored border-right-theme-color-2-6px pl-20 pr-20" href="#"></a> 
+               <!-- <a class="btn btn-colored btn-lg btn-flat btn-theme-colored btn-theme-colored border-right-theme-color-2-6px pl-20 pr-20" href="#"></a> -->
                 </div>
               </li>
 
