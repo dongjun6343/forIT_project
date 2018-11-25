@@ -61,7 +61,7 @@ font-size : 12px;
 <br><br> </p>
 <p id="p">* 자바동아리는 공부 훈련을 위한  최고의  전문가가  공부훈련조교로 참여하여 학생들과 함께 공부역량을 정교하게 교육시키는 것을 목적으로 합니다.</p>
 								<!-- <a class="btn btn-dark mt-10" href="#">링크 바로가기 <i
-									class="fa fa-arrow-circle-right"></i></a> -->
+									class="fa fa-arrow-circle-right"></i></a> --> 
 							</div>
 							<div class="col-md-6">
 								<div class="video-popup">
