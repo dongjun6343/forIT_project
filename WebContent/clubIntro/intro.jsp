@@ -65,7 +65,7 @@ font-size : 12px;
 							</div>
 							<div class="col-md-6">
 								<div class="video-popup">
-									<a title="SD교육 그룹">
+								<!-- <a title="자바동아리"> -->
 										 <img alt="" src="../resources/images/edugroup-png/clubimage.png"
 										class="img-responsive img-fullwidth">
 									</a>

@@ -48,7 +48,7 @@
                   data-splitout="none" 
                   data-responsive_offset="on" 
                	  style="z-index: 7; white-space: nowrap; font-weight:700;">GLOBAL IT BUSINESS 
-                </div>
+                </div> 
 
                 <!-- LAYER NR. 2 -->
                 <div class="tp-caption tp-resizeme text-uppercase text-white font-raleway bg-theme-colored-transparent border-left-theme-color-2-6px pl-20 pr-20"
